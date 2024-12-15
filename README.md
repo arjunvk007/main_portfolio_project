@@ -1,4 +1,4 @@
-# main_portfolio_project
+  # main_portfolio_project
 This section focuses on showcasing proficiency in data analytics, Performed data cleaning, structured datasets, and wrote optimized SQL queries to extract insights. Created interactive Power BI dashboards showcasing trends and answering business questions, to highlight proficiency in data analytics, visualization, and driving data-informed decisions.
 
 # Project_1: HOSPITAL OPERATIONAL MANAGEMENT ANALYSIS​
