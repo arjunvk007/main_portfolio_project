@@ -12,37 +12,67 @@ The 'Hospital Operational Management Analysis' project integrates SQL and Power 
 - Creating tables:
   
 1. Patient Table
+   
 o Attributes: PatientID, FirstName, LastName, DateOfBirth, Gender, Address, PhoneNumber, Email, EmergencyContactName, EmergencyContactPhone
+
 o Purpose: Stores demographic details of patients.
+
 2. Doctor Table
+   
 o Attributes: DoctorID, FirstName, LastName, Specialization, PhoneNumber, Email, DepartmentID, Availability
+
 o Purpose: Stores the details of doctors, including their specialization and contact details.
+
 3. Department Table
+   
 o Attributes: DepartmentID, DepartmentName, Location, PhoneExtension
+
 o Purpose: Defines different hospital departments such as Cardiology, Neurology, etc.
+
 4. Appointment Table
+
 o Attributes: AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDate, AppointmentTime, Status (Scheduled, Completed, Cancelled)
+
 o Purpose: Manages patient appointments with doctors.
+
 5. Medical Records Table
+
 o Attributes: RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TreatmentPlan, Prescription
+
 o Purpose: Records all patient medical history, including diagnosis and treatment.
+
 6. Prescription Table
 o Attributes: PrescriptionID, RecordID, MedicineID, Dosage, Frequency, Duration
 o Purpose: Keeps track of prescribed medicines for each patient's medical record.
+
 7. Medicine Table
+
 o Attributes: MedicineID, MedicineName, Manufacturer, StockQuantity, Price
+
 o Purpose: Stores information about available medicines.
+
 8. Billing Table
+
 o Attributes: BillingID, PatientID, TotalAmount, PaymentStatus (Paid/Unpaid), PaymentDate, PaymentMethod
+
 o Purpose: Handles billing and payments for hospital services.
+
 9. Staff Table
+
 o Attributes: StaffID, FirstName, LastName, Role, DepartmentID, PhoneNumber, Email, ShiftHours
+
 o Purpose: Stores information about non-medical staff (nurses, administrative staff, technicians, etc.).
+
 10.Room Table
+
 o Attributes: RoomID, RoomNumber, DepartmentID, RoomType (General, Private, ICU, etc.), AvailabilityStatus
+
 o Purpose: Maintains information about hospital rooms and their status.
+
 11.RoomAssignment Table
+
 o Attributes: AssignmentID, RoomID, PatientID, AdmissionDate, DischargeDate
+
 o Purpose: Records patient room assignments.
 
 relationships between Tables
