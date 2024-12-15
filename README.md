@@ -75,28 +75,18 @@ o Attributes: AssignmentID, RoomID, PatientID, AdmissionDate, DischargeDate
 
 o Purpose: Records patient room assignments.
 
-relationships between Tables
-
- One-to-Many Relationships:
-o A patient can have many appointments and medical records.
-o A doctor can handle multiple appointments and multiple medical records.
-o A department can have many doctors, appointments, and rooms.
-
- Many-to-Many Relationships:
-o Patients and doctors interact via appointments.
-o Doctors prescribe multiple medicines to patients via medical
-records.
-
- One-to-One Relationships:
-o A medical record can have a corresponding prescription entry.
 
 SQL Constraints to Enforce
+
  Primary Key Constraints: PatientID, DoctorID, DepartmentID, AppointmentID, etc.
+
  Foreign Key Constraints: Link PatientID in Appointment Table to PatientID in Patient Table.
+
  Not Null Constraints: For attributes that are essential, like FirstName, LastName, etc.
+
  Unique Constraints: For attributes like Email, PhoneNumber, RoomNumber, etc.
 
 - Loading data:
 
-Used sql queries to add data 
+Used sql queries to add data
 
