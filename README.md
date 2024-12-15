@@ -95,7 +95,7 @@ Formulated business questions and gathered insights for the business questions t
 
 Business Question 1:
 
-![Business Question 1]([https://github.com/arjunvk007/my_portfolio_projects/assets/125860492/45ccc7fe-8991-42c0-bb82-035046362d03])
+![Business Question 1](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%201.png)
 
 
 
