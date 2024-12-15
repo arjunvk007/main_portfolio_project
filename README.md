@@ -95,7 +95,8 @@ Formulated business questions and gathered insights for the business questions t
 
 Business Question 1:
 
-Portfolio Sql  photos/BQ 1.png
+![Business Question 1](Portfolio Sql  photos/BQ 1.png)
+
 
 
 
