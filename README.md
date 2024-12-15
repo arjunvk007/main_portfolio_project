@@ -9,7 +9,7 @@ The 'Hospital Operational Management Analysis' project integrates SQL and Power 
 
 ### Steps 
 
-- Creating tables:
+- **Creating tables (DDL statements):**
   
 1. Patient Table
    
@@ -88,5 +88,14 @@ SQL Constraints to Enforce
 
 - Loading data:
 
-Used sql queries to add data
+Used sql queries to populate data
+
+- **Created DML queries**
+Formulated business questions and gathered insights for the business questions through queries.
+
+Business Question 1:
+
+Portfolio Sql  photos/BQ 1.png
+
+
 
