@@ -11,82 +11,29 @@ The 'Hospital Operational Management Analysis' project integrates SQL and Power 
 
 - **Creating tables (DDL statements):**
   
-1. Patient Table
-   
-o Attributes: PatientID, FirstName, LastName, DateOfBirth, Gender, Address, PhoneNumber, Email, EmergencyContactName, EmergencyContactPhone
+1. Patient Table: PatientID, FirstName, LastName, DateOfBirth, Gender, Address, PhoneNumber, Email, EmergencyContactName, EmergencyContactPhone
 
-o Purpose: Stores demographic details of patients.
+2. Doctor Table: DoctorID, FirstName, LastName, Specialization, PhoneNumber, Email, DepartmentID, Availability
 
-2. Doctor Table
-   
-o Attributes: DoctorID, FirstName, LastName, Specialization, PhoneNumber, Email, DepartmentID, Availability
+3. Department Table: DepartmentID, DepartmentName, Location, PhoneExtension
 
-o Purpose: Stores the details of doctors, including their specialization and contact details.
+4. Appointment Table: AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDate, AppointmentTime, Status (Scheduled, Completed, Cancelled)
 
-3. Department Table
-   
-o Attributes: DepartmentID, DepartmentName, Location, PhoneExtension
+5. Medical Records Table: RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TreatmentPlan, Prescription
 
-o Purpose: Defines different hospital departments such as Cardiology, Neurology, etc.
+6. Prescription Table: PrescriptionID, RecordID, MedicineID, Dosage, Frequency, Duration
 
-4. Appointment Table
+7. Medicine Table: MedicineID, MedicineName, Manufacturer, StockQuantity, Price
 
-o Attributes: AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDate, AppointmentTime, Status (Scheduled, Completed, Cancelled)
+8. Billing Table: BillingID, PatientID, TotalAmount, PaymentStatus (Paid/Unpaid), PaymentDate, PaymentMethod
 
-o Purpose: Manages patient appointments with doctors.
+9. Staff Table: StaffID, FirstName, LastName, Role, DepartmentID, PhoneNumber, Email, ShiftHours
 
-5. Medical Records Table
+10.Room Table: RoomID, RoomNumber, DepartmentID, RoomType (General, Private, ICU, etc.), AvailabilityStatus
 
-o Attributes: RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TreatmentPlan, Prescription
+11.RoomAssignment Table: AssignmentID, RoomID, PatientID, AdmissionDate, DischargeDate
 
-o Purpose: Records all patient medical history, including diagnosis and treatment.
-
-6. Prescription Table
-o Attributes: PrescriptionID, RecordID, MedicineID, Dosage, Frequency, Duration
-o Purpose: Keeps track of prescribed medicines for each patient's medical record.
-
-7. Medicine Table
-
-o Attributes: MedicineID, MedicineName, Manufacturer, StockQuantity, Price
-
-o Purpose: Stores information about available medicines.
-
-8. Billing Table
-
-o Attributes: BillingID, PatientID, TotalAmount, PaymentStatus (Paid/Unpaid), PaymentDate, PaymentMethod
-
-o Purpose: Handles billing and payments for hospital services.
-
-9. Staff Table
-
-o Attributes: StaffID, FirstName, LastName, Role, DepartmentID, PhoneNumber, Email, ShiftHours
-
-o Purpose: Stores information about non-medical staff (nurses, administrative staff, technicians, etc.).
-
-10.Room Table
-
-o Attributes: RoomID, RoomNumber, DepartmentID, RoomType (General, Private, ICU, etc.), AvailabilityStatus
-
-o Purpose: Maintains information about hospital rooms and their status.
-
-11.RoomAssignment Table
-
-o Attributes: AssignmentID, RoomID, PatientID, AdmissionDate, DischargeDate
-
-o Purpose: Records patient room assignments.
-
-
-SQL Constraints to Enforce
-
- Primary Key Constraints: PatientID, DoctorID, DepartmentID, AppointmentID, etc.
-
- Foreign Key Constraints: Link PatientID in Appointment Table to PatientID in Patient Table.
-
- Not Null Constraints: For attributes that are essential, like FirstName, LastName, etc.
-
- Unique Constraints: For attributes like Email, PhoneNumber, RoomNumber, etc.
-
-- Loading data:
+- **Loading data:**
 
 Used sql queries to populate data
 
@@ -155,10 +102,10 @@ Business Question 15:
 
 ![Business Question 15](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%2015.png)
 
-- Connected the data in SQL to powerBI, to create dashboard
+- **Connected the data in SQL to powerBI, to create dashboard**
 
-- Charts used:
-  1. Bar Chart:
+-** Charts used:**
+1. Bar Chart:
 
 No. of Patients by Room Type (ICU, General, Private)
 Total Revenue by Department (General Surgery, Orthopedics, Neurology, etc.)
@@ -189,15 +136,19 @@ Total Appointments (244K)
 Number of Unpaid Patients (199)
 Doctor with Most Patients (Alice Brown)
 
-Dashboard:
+**Dashboard:**
 
 ![Visualization](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Visualization.png)
 
-Insights:
+**Insights:**
 
 
 The analysis highlights key hospital operational insights and strategies. ICU rooms show the highest utilization (48.87%) and turnover, while private rooms are underutilized (17.88%), suggesting opportunities for marketing or pricing adjustments. General Surgery and Orthopedics contribute the most revenue (~$1.1M), while Dermatology and Emergency departments underperform. Medicine prescriptions are balanced, with frequent ICU drugs like Amoxicillin and Aspirin requiring stock monitoring and supplier negotiations. 
 
-Strategies:
+**Strategies:**
 
-Strategies include optimizing room allocation, enhancing billing processes to reduce unpaid bills, focusing resources on high-revenue departments, improving patient experiences through feedback and loyalty programs, and expanding ICU/general room capacities to meet demand.
+Key strategies include optimizing room utilization by promoting private rooms and reallocating ICU resources to manage high demand. Enhance billing processes with automated reminders and flexible payment plans to reduce unpaid bills. Focus on high-revenue departments like General Surgery and Orthopedics by allocating more resources. Improve medicine management through bulk supplier negotiations for high-demand drugs. Expand ICU/general room capacities and implement patient feedback systems and loyalty programs to enhance experiences and retention.
+
+**Conclusion**
+
+In 'Hospital Operational Management Analysis' project effectively utilized SQL for database creation, data entry, and generating key business insights through optimized queries. Power BI was used to develop dynamic visualizations, including bar charts, pie charts, and KPIs, to showcase trends in room utilization, revenue generation, and prescription patterns. The project provided actionable strategies to optimize resource allocation, improve billing processes, and enhance patient satisfaction.  This project demonstrated the effective use of technologies to derive actionable business strategies, showcasing strong skills in data analysis, visualization, and informed decision-making.
