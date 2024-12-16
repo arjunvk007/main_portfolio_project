@@ -192,3 +192,12 @@ Doctor with Most Patients (Alice Brown)
 Dashboard:
 
 ![Visualization](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Visualization.png)
+
+Insights:
+
+
+The analysis highlights key hospital operational insights and strategies. ICU rooms show the highest utilization (48.87%) and turnover, while private rooms are underutilized (17.88%), suggesting opportunities for marketing or pricing adjustments. General Surgery and Orthopedics contribute the most revenue (~$1.1M), while Dermatology and Emergency departments underperform. Medicine prescriptions are balanced, with frequent ICU drugs like Amoxicillin and Aspirin requiring stock monitoring and supplier negotiations. 
+
+Strategies:
+
+Strategies include optimizing room allocation, enhancing billing processes to reduce unpaid bills, focusing resources on high-revenue departments, improving patient experiences through feedback and loyalty programs, and expanding ICU/general room capacities to meet demand.
