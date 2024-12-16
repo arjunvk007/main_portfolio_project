@@ -110,5 +110,22 @@ Business Question 4:
 
 ![Business Question 4](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%204.png)
 
+Business Question 5:
+
+![Business Question 5](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%205.png)
+
+Business Question 6:
+
+![Business Question 6](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%206.png)
+
+Business Question 7:
+
+![Business Question 7](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%207.png)
+
+Business Question 8:
+
+![Business Question 8](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%208.png)
+
+
 
 
