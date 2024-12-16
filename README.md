@@ -97,7 +97,18 @@ Business Question 1:
 
 ![Business Question 1](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%201.png)
 
+Business Question 2:
 
+![Business Question 2](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ2.png)
+
+
+Business Question 3:
+
+![Business Question 3](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%203.png)
+
+Business Question 4:
+
+![Business Question 4](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%204.png)
 
 
 
