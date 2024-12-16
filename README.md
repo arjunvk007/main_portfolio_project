@@ -143,4 +143,14 @@ Business Question 12:
 
 ![Business Question 12](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%2012.png)
 
+Business Question 13:
 
+![Business Question 13](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%2013.png)
+
+Business Question 14:
+
+![Business Question 14](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%2014.png)
+
+Business Question 15:
+
+![Business Question 15](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%2015.png)
