@@ -154,3 +154,41 @@ Business Question 14:
 Business Question 15:
 
 ![Business Question 15](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%2015.png)
+
+- Connected the data in SQL to powerBI, to create dashboard
+
+- Charts used:
+  1. Bar Chart:
+
+No. of Patients by Room Type (ICU, General, Private)
+Total Revenue by Department (General Surgery, Orthopedics, Neurology, etc.)
+
+2. Column Chart:
+Turnover Rate (Admissions/Discharges) by Room Type
+
+3. Pie Chart:
+
+Medicine Prescription Count (Simvastatin, Metformin, Paracetamol, etc.)
+
+4. Stacked Bar Chart:
+
+Average Patient Count by Room
+
+5. Radar Chart:
+
+Number of Appointments by Department (Maternity, General Surgery, Neurology, etc.)
+
+6. Table:
+
+Room Type and Average Stay
+ICU Prescribed Medicines and Count
+
+7. KPI Cards:
+
+Total Appointments (244K)
+Number of Unpaid Patients (199)
+Doctor with Most Patients (Alice Brown)
+
+Dashboard:
+
+![Visualization](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Visualization.png)
