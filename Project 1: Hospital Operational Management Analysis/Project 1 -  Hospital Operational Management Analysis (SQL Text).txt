@@ -1,0 +1,796 @@
+-- 1. Patient Table
+CREATE TABLE Patient (
+    PatientID INT PRIMARY KEY IDENTITY(1,1),
+    FirstName NVARCHAR(50) NOT NULL,
+    LastName NVARCHAR(50) NOT NULL,
+    DateOfBirth DATE NOT NULL,
+    Gender NVARCHAR(10) NOT NULL,
+    Address NVARCHAR(255),
+    PhoneNumber NVARCHAR(15) UNIQUE NOT NULL,
+    Email NVARCHAR(100) UNIQUE,
+    EmergencyContactName NVARCHAR(50),
+    EmergencyContactPhone NVARCHAR(15)
+);
+
+CREATE TABLE Department (
+    DepartmentID INT PRIMARY KEY IDENTITY(1,1),
+    DepartmentName NVARCHAR(100) NOT NULL,
+    Location NVARCHAR(100),
+    PhoneExtension NVARCHAR(10) UNIQUE
+);
+
+-- 2. Doctor Table (now comes after Department Table)
+CREATE TABLE Doctor (
+    DoctorID INT PRIMARY KEY IDENTITY(1,1),
+    FirstName NVARCHAR(50) NOT NULL,
+    LastName NVARCHAR(50) NOT NULL,
+    Specialization NVARCHAR(100) NOT NULL,
+    PhoneNumber NVARCHAR(15) UNIQUE NOT NULL,
+    Email NVARCHAR(100) UNIQUE NOT NULL,
+    DepartmentID INT NOT NULL,
+    Availability NVARCHAR(50),
+    FOREIGN KEY (DepartmentID) REFERENCES Department(DepartmentID)
+);
+
+
+-- 4. Appointment Table
+CREATE TABLE Appointment (
+    AppointmentID INT PRIMARY KEY IDENTITY(1,1),
+    PatientID INT NOT NULL,
+    DoctorID INT NOT NULL,
+    DepartmentID INT NOT NULL,
+    AppointmentDate DATE NOT NULL,
+    AppointmentTime TIME NOT NULL,
+    Status NVARCHAR(20) CHECK (Status IN ('Scheduled', 'Completed', 'Cancelled')),
+    FOREIGN KEY (PatientID) REFERENCES Patient(PatientID),
+    FOREIGN KEY (DoctorID) REFERENCES Doctor(DoctorID),
+    FOREIGN KEY (DepartmentID) REFERENCES Department(DepartmentID)
+);
+
+-- 5. Medical Records Table
+CREATE TABLE MedicalRecord (
+    RecordID INT PRIMARY KEY IDENTITY(1,1),
+    PatientID INT NOT NULL,
+    DoctorID INT NOT NULL,
+    VisitDate DATE NOT NULL,
+    Diagnosis NVARCHAR(255),
+    TreatmentPlan NVARCHAR(255),
+    Prescription NVARCHAR(255),
+    FOREIGN KEY (PatientID) REFERENCES Patient(PatientID),
+    FOREIGN KEY (DoctorID) REFERENCES Doctor(DoctorID)
+);
+
+-- 7. Medicine Table (create this first)
+CREATE TABLE Medicine (
+    MedicineID INT PRIMARY KEY IDENTITY(1,1),
+    MedicineName NVARCHAR(100) NOT NULL,
+    Manufacturer NVARCHAR(100),
+    StockQuantity INT DEFAULT 0,
+    Price DECIMAL(10,2)
+);
+
+-- 6. Prescription Table (now comes after Medicine Table)
+CREATE TABLE Prescription (
+    PrescriptionID INT PRIMARY KEY IDENTITY(1,1),
+    RecordID INT NOT NULL,
+    MedicineID INT NOT NULL,
+    Dosage NVARCHAR(50),
+    Frequency NVARCHAR(50),
+    Duration NVARCHAR(50),
+    FOREIGN KEY (RecordID) REFERENCES MedicalRecord(RecordID),
+    FOREIGN KEY (MedicineID) REFERENCES Medicine(MedicineID)
+);
+
+-- 8. Billing Table
+CREATE TABLE Billing (
+    BillingID INT PRIMARY KEY IDENTITY(1,1),
+    PatientID INT NOT NULL,
+    TotalAmount DECIMAL(10,2) NOT NULL,
+    PaymentStatus NVARCHAR(20) CHECK (PaymentStatus IN ('Paid', 'Unpaid')),
+    PaymentDate DATE,
+    PaymentMethod NVARCHAR(50),
+    FOREIGN KEY (PatientID) REFERENCES Patient(PatientID)
+);
+
+-- 9. Staff Table
+CREATE TABLE Staff (
+    StaffID INT PRIMARY KEY IDENTITY(1,1),
+    FirstName NVARCHAR(50) NOT NULL,
+    LastName NVARCHAR(50) NOT NULL,
+    Role NVARCHAR(50) NOT NULL,
+    DepartmentID INT NOT NULL,
+    PhoneNumber NVARCHAR(15) UNIQUE NOT NULL,
+    Email NVARCHAR(100) UNIQUE,
+    ShiftHours NVARCHAR(50),
+    FOREIGN KEY (DepartmentID) REFERENCES Department(DepartmentID)
+);
+
+-- 10. Room Table
+CREATE TABLE Room (
+    RoomID INT PRIMARY KEY IDENTITY(1,1),
+    RoomNumber NVARCHAR(10) UNIQUE NOT NULL,
+    DepartmentID INT NOT NULL,
+    RoomType NVARCHAR(20) CHECK (RoomType IN ('General', 'Private', 'ICU')),
+    AvailabilityStatus NVARCHAR(20) CHECK (AvailabilityStatus IN ('Available', 'Occupied')),
+    FOREIGN KEY (DepartmentID) REFERENCES Department(DepartmentID)
+);
+
+-- 11. RoomAssignment Table
+CREATE TABLE RoomAssignment (
+    AssignmentID INT PRIMARY KEY IDENTITY(1,1),
+    RoomID INT NOT NULL,
+    PatientID INT NOT NULL,
+    AdmissionDate DATE NOT NULL,
+    DischargeDate DATE,
+    FOREIGN KEY (RoomID) REFERENCES Room(RoomID),
+    FOREIGN KEY (PatientID) REFERENCES Patient(PatientID)
+);
+
+-- Make sure this script is running in a clean environment where no previous variables are declared
+-- If you've already declared @RecordCount in an earlier part of your script, comment it out here
+
+DECLARE @RecordCount INT;
+SET @RecordCount = ABS(CHECKSUM(NEWID())) % 401 + 100;  -- Generates a random number between 100 and 500
+
+DECLARE @i INT = 1;
+WHILE @i <= @RecordCount
+BEGIN
+    INSERT INTO Patient (FirstName, LastName, DateOfBirth, Gender, Address, PhoneNumber, Email, EmergencyContactName, EmergencyContactPhone)
+    VALUES 
+    (
+        -- Random First Name from a list
+        CASE 
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 0 THEN 'John'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 1 THEN 'Mary'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 2 THEN 'Michael'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 3 THEN 'Jessica'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 4 THEN 'James'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 5 THEN 'Linda'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 6 THEN 'David'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 7 THEN 'Patricia'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 8 THEN 'Robert'
+            ELSE 'Jennifer'
+        END,
+        
+        -- Random Last Name from a list
+        CASE 
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 0 THEN 'Smith'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 1 THEN 'Johnson'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 2 THEN 'Williams'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 3 THEN 'Brown'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 4 THEN 'Jones'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 5 THEN 'Davis'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 6 THEN 'Miller'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 7 THEN 'Wilson'
+            WHEN ABS(CHECKSUM(NEWID())) % 10 = 8 THEN 'Moore'
+            ELSE 'Taylor'
+        END,
+
+        DATEADD(YEAR, -(ABS(CHECKSUM(NEWID())) % 60), GETDATE()),  -- Random Date of Birth within the last 60 years
+        CASE WHEN (ABS(CHECKSUM(NEWID())) % 2) = 0 THEN 'Male' ELSE 'Female' END,  -- Random Gender
+        CONCAT(ABS(CHECKSUM(NEWID())) % 1000, ' Main St, City, State'),  -- Random Address
+        CONCAT('555-', RIGHT('0000' + CAST(ABS(CHECKSUM(NEWID())) % 10000 AS VARCHAR), 4)),  -- Random Phone Number (555-xxxx)
+        CONCAT(CHAR(65 + (ABS(CHECKSUM(NEWID())) % 26)), CHAR(65 + (ABS(CHECKSUM(NEWID())) % 26)), '@example.com'),  -- Random Email
+        CHAR(65 + (ABS(CHECKSUM(NEWID())) % 26)),  -- Random Emergency Contact Name (A-Z)
+        CONCAT('555-', RIGHT('0000' + CAST(ABS(CHECKSUM(NEWID())) % 10000 AS VARCHAR), 4))  -- Random Emergency Contact Phone
+    );
+
+    SET @i = @i + 1;
+END
+
+--Doctor
+
+DECLARE @DoctorCount INT = (SELECT COUNT(*) FROM Doctor); -- Get the count of doctors in the table
+DECLARE @i INT = 1;
+
+-- Update each doctor with random names and other details
+WHILE @i <= @DoctorCount
+BEGIN
+    UPDATE Doctor
+    SET 
+        FirstName = 
+            CASE 
+                WHEN ABS(CHECKSUM(NEWID())) % 5 = 0 THEN 'John'
+                WHEN ABS(CHECKSUM(NEWID())) % 5 = 1 THEN 'Alice'
+                WHEN ABS(CHECKSUM(NEWID())) % 5 = 2 THEN 'James'
+                WHEN ABS(CHECKSUM(NEWID())) % 5 = 3 THEN 'Sarah'
+                ELSE 'Michael'
+            END,
+        
+        LastName = 
+            CASE 
+                WHEN ABS(CHECKSUM(NEWID())) % 5 = 0 THEN 'Smith'
+                WHEN ABS(CHECKSUM(NEWID())) % 5 = 1 THEN 'Johnson'
+                WHEN ABS(CHECKSUM(NEWID())) % 5 = 2 THEN 'Williams'
+                WHEN ABS(CHECKSUM(NEWID())) % 5 = 3 THEN 'Brown'
+                ELSE 'Jones'
+            END,
+
+        Specialization = 
+            CASE 
+                WHEN ABS(CHECKSUM(NEWID())) % 5 = 0 THEN 'Cardiology'
+                WHEN ABS(CHECKSUM(NEWID())) % 5 = 1 THEN 'Neurology'
+                WHEN ABS(CHECKSUM(NEWID())) % 5 = 2 THEN 'Orthopedics'
+                WHEN ABS(CHECKSUM(NEWID())) % 5 = 3 THEN 'Pediatrics'
+                ELSE 'General Surgery'
+            END,
+
+        PhoneNumber = CONCAT('555-', RIGHT('0000' + CAST(ABS(CHECKSUM(NEWID())) % 10000 AS VARCHAR), 4)),
+
+        Email = CONCAT('doctor', CAST(@i AS NVARCHAR(10)), '@example.com'),
+
+        Availability = 
+            CASE 
+                WHEN ABS(CHECKSUM(NEWID())) % 3 = 0 THEN 'Morning'
+                WHEN ABS(CHECKSUM(NEWID())) % 3 = 1 THEN 'Afternoon'
+                ELSE 'Evening'
+            END
+    WHERE DoctorID = @i;
+
+    SET @i = @i + 1;
+END;
+
+
+--Department
+
+-- Insert data into Department Table
+INSERT INTO Department (DepartmentName, Location, PhoneExtension)
+VALUES
+    ('Cardiology', 'Building A, 2nd Floor', '101'),
+    ('Pediatrics', 'Building B, 3rd Floor', '102'),
+    ('Emergency', 'Ground Floor, Near Main Entrance', '103'),
+    ('Orthopedics', 'Building C, 1st Floor', '104'),
+    ('Neurology', 'Building A, 3rd Floor', '105'),
+    ('Oncology', 'Building D, 2nd Floor', '106'),
+    ('General Surgery', 'Building B, 2nd Floor', '107'),
+    ('Maternity', 'Building A, 4th Floor', '108'),
+    ('Gastroenterology', 'Building C, 2nd Floor', '109'),
+    ('Dermatology', 'Building D, 1st Floor', '110');
+
+	--Appointment
+
+	-- Create Appointment Table
+
+-- Insert Data into Appointment Table
+DECLARE @i INT = 1;
+DECLARE @AppointmentCount INT = 500;  -- Adjust for the number of records
+
+-- Loop to insert multiple appointment records
+WHILE @i <= @AppointmentCount
+BEGIN
+    INSERT INTO Appointment (PatientID, DoctorID, DepartmentID, AppointmentDate, AppointmentTime, Status)
+    VALUES
+    (
+        -- Randomly select a patient ID
+        (SELECT TOP 1 PatientID FROM Patient ORDER BY NEWID()),
+        
+        -- Randomly select a doctor ID
+        (SELECT TOP 1 DoctorID FROM Doctor ORDER BY NEWID()),
+        
+        -- Randomly select a department ID
+        (SELECT TOP 1 DepartmentID FROM Department ORDER BY NEWID()),
+        
+        -- Randomly generate an appointment date within the next 30 days
+        DATEADD(DAY, ABS(CHECKSUM(NEWID())) % 30, GETDATE()),
+        
+        -- Randomly generate an appointment time (e.g., between 8:00 AM and 6:00 PM)
+        DATEADD(MINUTE, (ABS(CHECKSUM(NEWID())) % 600), '08:00:00'),
+        
+        -- Randomly assign the status as 'Scheduled', 'Completed', or 'Cancelled'
+        CASE 
+            WHEN ABS(CHECKSUM(NEWID())) % 3 = 0 THEN 'Scheduled'
+            WHEN ABS(CHECKSUM(NEWID())) % 3 = 1 THEN 'Completed'
+            ELSE 'Cancelled'
+        END
+    );
+    
+    SET @i = @i + 1;
+END;
+
+--Medicine
+
+-- Insert Data into Medicine Table
+DECLARE @i INT = 1;
+DECLARE @MedicineCount INT = 500;  -- Adjust for the number of records
+
+-- Sample medicine data for insertion (manually inserted for the sake of realism)
+DECLARE @Medicines TABLE (MedicineName NVARCHAR(100), Manufacturer NVARCHAR(100));
+
+-- Prepopulate some sample medicine names and manufacturers
+INSERT INTO @Medicines (MedicineName, Manufacturer)
+VALUES 
+    ('Paracetamol', 'XYZ Pharmaceuticals'),
+    ('Ibuprofen', 'ABC Pharma'),
+    ('Aspirin', 'Health Co'),
+    ('Amoxicillin', 'MediCorp'),
+    ('Lisinopril', 'MedPharm'),
+    ('Metformin', 'Pharma Ltd'),
+    ('Omeprazole', 'Pills Inc'),
+    ('Losartan', 'Global Meds'),
+    ('Ciprofloxacin', 'DrugCo'),
+    ('Simvastatin', 'Better Health'),
+    ('Diphenhydramine', 'PharmaTech'),
+    ('Levothyroxine', 'EndoPharm'),
+    ('Loratadine', 'AllergyCare'),
+    ('Furosemide', 'MedWorld'),
+    ('Prednisone', 'BioMeds');
+
+-- Loop to insert 500 medicines (each medicine with randomized stock and price)
+WHILE @i <= @MedicineCount
+BEGIN
+    -- Randomly select a medicine from the predefined list and insert with random stock and price
+    INSERT INTO Medicine (MedicineName, Manufacturer, StockQuantity, Price)
+    SELECT 
+        MedicineName,
+        Manufacturer,
+        ABS(CHECKSUM(NEWID())) % 1000,  -- Random stock quantity between 0 and 1000
+        CAST(ROUND(10 + (RAND() * (300 - 10)), 2) AS DECIMAL(10,2))  -- Random price between 10 and 300
+    FROM @Medicines
+    ORDER BY NEWID()  -- Randomly select a medicine from the list
+    
+    SET @i = @i + 1;
+END;
+
+--medical records
+
+-- Insert Data into MedicalRecords Table
+DECLARE @i INT = 1;
+DECLARE @RecordCount INT = 500;  -- Number of records to insert
+
+-- Sample data for diagnosis and treatment plans
+DECLARE @Diagnoses TABLE (Diagnosis NVARCHAR(255), TreatmentPlan NVARCHAR(255));
+DECLARE @Prescriptions TABLE (Prescription NVARCHAR(255));
+
+-- Prepopulate some sample diagnoses, treatment plans, and prescriptions
+INSERT INTO @Diagnoses (Diagnosis, TreatmentPlan)
+VALUES 
+    ('Hypertension', 'Monitor blood pressure; lifestyle changes, antihypertensive medication'),
+    ('Diabetes Type 2', 'Lifestyle modification, Metformin, Insulin'),
+    ('Asthma', 'Inhalers as needed, avoid triggers, monitor lung function'),
+    ('Pneumonia', 'Antibiotics, rest, and fluids'),
+    ('Migraine', 'Pain relievers, avoid triggers, hydration'),
+    ('Anxiety', 'Therapy, medication (SSRIs)'),
+    ('Back Pain', 'Physical therapy, pain management, exercises'),
+    ('Flu', 'Antiviral medication, rest, hydration'),
+    ('COVID-19', 'Antiviral medications, oxygen therapy, isolation'),
+    ('Osteoarthritis', 'Pain relief, physical therapy, joint replacement consideration');
+
+INSERT INTO @Prescriptions (Prescription)
+VALUES 
+    ('Paracetamol 500mg, twice daily'),
+    ('Ibuprofen 200mg, three times a day'),
+    ('Albuterol inhaler, as needed'),
+    ('Amoxicillin 500mg, three times a day for 7 days'),
+    ('Sumatriptan 50mg for migraine, as needed'),
+    ('Sertraline 50mg daily for anxiety'),
+    ('Acetaminophen 500mg, every 6 hours'),
+    ('Oseltamivir 75mg twice daily for 5 days'),
+    ('Hydroxychloroquine 200mg, once daily for COVID-19'),
+    ('Celecoxib 200mg, daily for pain management');
+
+-- Loop to insert 500 records (each record with random diagnosis, treatment, and prescription)
+WHILE @i <= @RecordCount
+BEGIN
+    -- Randomly select a diagnosis, treatment plan, and prescription from predefined lists
+    INSERT INTO MedicalRecord (PatientID, DoctorID, VisitDate, Diagnosis, TreatmentPlan, Prescription)
+    SELECT 
+        ABS(CHECKSUM(NEWID())) % 100 + 1,  -- Random PatientID (1-100, assuming 100 patients)
+        ABS(CHECKSUM(NEWID())) % 20 + 1,   -- Random DoctorID (1-20, assuming 20 doctors)
+        DATEADD(DAY, -ABS(CHECKSUM(NEWID())) % 365, GETDATE()),  -- Random VisitDate in the last year
+        Diagnosis,
+        TreatmentPlan,
+        Prescription
+    FROM @Diagnoses
+    CROSS JOIN @Prescriptions
+    ORDER BY NEWID()  -- Randomly select a diagnosis, treatment plan, and prescription
+    
+    SET @i = @i + 1;
+END;
+
+--Perscription
+
+-- Insert Data into Prescription Table
+DECLARE @i INT = 1;
+DECLARE @RecordCount INT = 1500;  -- Number of prescriptions to insert
+DECLARE @MedicineCount INT = (SELECT COUNT(*) FROM Medicine);  -- Get total number of medicines in the Medicine table
+
+-- Sample data for Dosage, Frequency, and Duration
+DECLARE @Dosage TABLE (Dosage NVARCHAR(50));
+DECLARE @Frequency TABLE (Frequency NVARCHAR(50));
+DECLARE @Duration TABLE (Duration NVARCHAR(50));
+DECLARE @ValidRecordIDs TABLE (RecordID INT);
+
+-- Prepopulate some sample Dosages, Frequencies, and Durations
+INSERT INTO @Dosage (Dosage)
+VALUES 
+    ('500mg'), 
+    ('250mg'),
+    ('1mg'),
+    ('5mg'),
+    ('10mg'),
+    ('200mg'),
+    ('400mg'),
+    ('2mg'),
+    ('50mg');
+
+INSERT INTO @Frequency (Frequency)
+VALUES 
+    ('Once a day'), 
+    ('Twice a day'), 
+    ('Three times a day'), 
+    ('Every 6 hours'), 
+    ('As needed');
+
+INSERT INTO @Duration (Duration)
+VALUES 
+    ('7 days'), 
+    ('14 days'), 
+    ('30 days'), 
+    ('For 1 month'), 
+    ('For 3 months');
+
+-- Get all valid RecordIDs from MedicalRecord
+INSERT INTO @ValidRecordIDs (RecordID)
+SELECT RecordID
+FROM MedicalRecord;
+
+-- Loop to insert prescriptions (each linked to random medical records and medicines)
+WHILE @i <= @RecordCount
+BEGIN
+    -- Randomly select RecordID, MedicineID, Dosage, Frequency, and Duration
+    INSERT INTO Prescription (RecordID, MedicineID, Dosage, Frequency, Duration)
+    SELECT 
+        (SELECT TOP 1 RecordID FROM @ValidRecordIDs ORDER BY NEWID()),  -- Random RecordID from valid MedicalRecord entries
+        ABS(CHECKSUM(NEWID())) % @MedicineCount + 1,                    -- Random MedicineID
+        Dosage, Frequency, Duration
+    FROM @Dosage
+    CROSS JOIN @Frequency
+    CROSS JOIN @Duration
+    ORDER BY NEWID();  -- Randomly select dosage, frequency, and duration
+
+    SET @i = @i + 1;
+END;
+
+--Billing
+
+DECLARE @TotalRecords INT = 1000;  -- Number of billing records to generate
+DECLARE @MinAmount DECIMAL(10, 2) = 50.00;  -- Minimum bill amount
+DECLARE @MaxAmount DECIMAL(10, 2) = 10000.00;  -- Maximum bill amount
+
+DECLARE @PaymentMethods TABLE (Method NVARCHAR(20));
+INSERT INTO @PaymentMethods (Method)
+VALUES ('Credit Card'), ('Cash'), ('Insurance'), ('Bank Transfer');
+
+DECLARE @i INT = 1;
+DECLARE @PatientCount INT = (SELECT COUNT(*) FROM Patient);  -- Total patients available
+
+WHILE @i <= @TotalRecords
+BEGIN
+    DECLARE @RandomPatientID INT = ABS(CHECKSUM(NEWID())) % @PatientCount + 1;  -- Random PatientID
+    DECLARE @TotalAmount DECIMAL(10, 2) = ROUND(RAND() * (@MaxAmount - @MinAmount) + @MinAmount, 2);  -- Random amount
+    DECLARE @PaymentStatus NVARCHAR(10) = CASE 
+                                            WHEN RAND() < 0.8 THEN 'Paid'  -- 80% chance of 'Paid'
+                                            ELSE 'Unpaid'  -- 20% chance of 'Unpaid'
+                                         END;
+
+    DECLARE @PaymentDate DATE = CASE 
+                                   WHEN @PaymentStatus = 'Paid' THEN DATEADD(DAY, -ABS(CHECKSUM(NEWID())) % 730, GETDATE())  -- Random date within last 2 years
+                                   ELSE NULL
+                                END;
+
+    DECLARE @PaymentMethod NVARCHAR(20) = CASE 
+                                             WHEN @PaymentStatus = 'Paid' THEN 
+                                                (SELECT TOP 1 Method FROM @PaymentMethods ORDER BY NEWID())  -- Random payment method
+                                             ELSE NULL
+                                          END;
+
+    -- Insert into Billing table
+    INSERT INTO Billing (PatientID, TotalAmount, PaymentStatus, PaymentDate, PaymentMethod)
+    VALUES (@RandomPatientID, @TotalAmount, @PaymentStatus, @PaymentDate, @PaymentMethod);
+
+    SET @i = @i + 1;
+END;
+
+--Staff
+DECLARE @TotalRecords INT = 100;  -- Number of staff records to generate
+DECLARE @DepartmentsCount INT = (SELECT COUNT(*) FROM Department);  -- Total departments available
+
+-- Sample data for first names, last names, and roles
+DECLARE @FirstNames TABLE (FirstName NVARCHAR(50));
+DECLARE @LastNames TABLE (LastName NVARCHAR(50));
+DECLARE @Roles TABLE (Role NVARCHAR(50));
+DECLARE @ShiftHours TABLE (Shift NVARCHAR(20));
+
+-- Populate first and last names
+INSERT INTO @FirstNames (FirstName)
+VALUES ('Alice'), ('Bob'), ('Charlie'), ('Diana'), ('Eve'), ('Frank'),
+       ('Grace'), ('Hank'), ('Ivy'), ('Jack'), ('Karen'), ('Leo');
+
+INSERT INTO @LastNames (LastName)
+VALUES ('Smith'), ('Johnson'), ('Williams'), ('Brown'), ('Jones'),
+       ('Garcia'), ('Miller'), ('Davis'), ('Rodriguez'), ('Martinez');
+
+-- Populate roles
+INSERT INTO @Roles (Role)
+VALUES ('Nurse'), ('Technician'), ('Admin Staff'), ('Receptionist'),
+       ('Pharmacist'), ('IT Support'), ('Janitor');
+
+-- Populate shifts
+INSERT INTO @ShiftHours (Shift)
+VALUES ('Morning'), ('Night'), ('Rotational');
+
+DECLARE @i INT = 1;
+
+WHILE @i <= @TotalRecords
+BEGIN
+    -- Random selections for name, role, and shift
+    DECLARE @FirstName NVARCHAR(50) = (SELECT TOP 1 FirstName FROM @FirstNames ORDER BY NEWID());
+    DECLARE @LastName NVARCHAR(50) = (SELECT TOP 1 LastName FROM @LastNames ORDER BY NEWID());
+    DECLARE @Role NVARCHAR(50) = (SELECT TOP 1 Role FROM @Roles ORDER BY NEWID());
+    DECLARE @Shift NVARCHAR(20) = (SELECT TOP 1 Shift FROM @ShiftHours ORDER BY NEWID());
+    DECLARE @PhoneNumber NVARCHAR(15) = CONCAT('555-', FORMAT(ABS(CHECKSUM(NEWID())) % 10000, '0000'));  -- Random phone number
+    DECLARE @Email NVARCHAR(100) = LOWER(@FirstName + '.' + @LastName + '@hospital.com');  -- Generate email
+    DECLARE @DepartmentID INT = ABS(CHECKSUM(NEWID())) % @DepartmentsCount + 1;  -- Random department ID
+
+    -- Insert into Staff table
+    INSERT INTO Staff (FirstName, LastName, Role, DepartmentID, PhoneNumber, Email, ShiftHours)
+    VALUES (@FirstName, @LastName, @Role, @DepartmentID, @PhoneNumber, @Email, @Shift);
+
+    SET @i = @i + 1;
+END;
+
+--Room
+DECLARE @RoomCount INT = 50;  -- Number of rooms to generate
+DECLARE @FloorCount INT = 5;  -- Total number of floors
+
+-- Sample room types
+DECLARE @RoomTypes TABLE (RoomType NVARCHAR(50), MinCapacity INT, MaxCapacity INT);
+INSERT INTO @RoomTypes (RoomType, MinCapacity, MaxCapacity)
+VALUES ('General', 4, 6), ('Private', 1, 1), ('ICU', 1, 2);
+
+DECLARE @i INT = 1;
+
+WHILE @i <= @RoomCount
+BEGIN
+    -- Random selection for room type
+    DECLARE @RoomType NVARCHAR(50) = (SELECT TOP 1 RoomType FROM @RoomTypes ORDER BY NEWID());
+    DECLARE @MinCapacity INT = (SELECT MinCapacity FROM @RoomTypes WHERE RoomType = @RoomType);
+    DECLARE @MaxCapacity INT = (SELECT MaxCapacity FROM @RoomTypes WHERE RoomType = @RoomType);
+    DECLARE @Capacity INT = @MinCapacity + ABS(CHECKSUM(NEWID())) % (@MaxCapacity - @MinCapacity + 1);  -- Random capacity
+    DECLARE @Floor INT = ABS(CHECKSUM(NEWID())) % @FloorCount + 1;  -- Random floor number
+    DECLARE @Availability NVARCHAR(20) = CASE WHEN ABS(CHECKSUM(NEWID())) % 2 = 0 THEN 'Available' ELSE 'Occupied' END;
+
+    -- Insert into Room table
+    INSERT INTO Room (RoomType, Floor, Capacity, AvailabilityStatus)
+    VALUES (@RoomType, @Floor, @Capacity, @Availability);
+
+    SET @i = @i + 1;
+END;
+
+--RoomAssignment
+
+DECLARE @AssignmentCount INT = 500;  -- Number of assignments to generate
+DECLARE @TotalRooms INT = (SELECT COUNT(*) FROM Room);  -- Total rooms available
+DECLARE @TotalPatients INT = (SELECT COUNT(*) FROM Patient);  -- Total patients available
+
+DECLARE @j INT = 1;
+
+WHILE @j <= @AssignmentCount
+BEGIN
+    -- Random RoomID and PatientID
+    DECLARE @RoomID INT = ABS(CHECKSUM(NEWID())) % @TotalRooms + 1;  -- Random RoomID
+    DECLARE @PatientID INT = ABS(CHECKSUM(NEWID())) % @TotalPatients + 1;  -- Random PatientID
+
+    -- Generate random AdmissionDate and DischargeDate
+    DECLARE @AdmissionDate DATE = DATEADD(DAY, -1 * ABS(CHECKSUM(NEWID())) % 365, GETDATE());  -- Random date within last year
+    DECLARE @DischargeDate DATE = CASE 
+        WHEN ABS(CHECKSUM(NEWID())) % 4 = 0 THEN NULL  -- 25% chance of no discharge (ongoing admission)
+        ELSE DATEADD(DAY, ABS(CHECKSUM(NEWID())) % 15, @AdmissionDate)  -- Random discharge within 15 days of admission
+    END;
+
+    -- Insert into RoomAssignment table
+    INSERT INTO RoomAssignment (RoomID, PatientID, AdmissionDate, DischargeDate)
+    VALUES (@RoomID, @PatientID, @AdmissionDate, @DischargeDate);
+
+    SET @j = @j + 1;
+END;
+
+--DML
+
+--1. Which rooms are currently occupied and by which patients?
+
+SELECT R.RoomID, R.RoomType, RA.PatientID, P.FirstName, P.LastName
+FROM Room R
+JOIN RoomAssignment RA ON R.RoomID = RA.RoomID
+JOIN Patient P ON RA.PatientID = P.PatientID
+WHERE R.AvailabilityStatus = 'Occupied' AND RA.DischargeDate IS NULL;
+
+--2. What is the average length of stay (in days) for patients by room type?
+
+SELECT R.RoomType, AVG(DATEDIFF(DAY, RA.AdmissionDate, RA.DischargeDate)) AS AvgLengthOfStay
+FROM RoomAssignment RA
+JOIN Room R ON RA.RoomID = R.RoomID
+WHERE RA.DischargeDate IS NOT NULL
+GROUP BY R.RoomType;
+
+--3. How many prescriptions have been issued for each medicine?
+
+SELECT M.MedicineName, COUNT(PrescriptionID) AS PrescriptionCount
+FROM Prescription P
+JOIN Medicine M ON P.MedicineID = M.MedicineID
+GROUP BY M.MedicineName
+ORDER BY PrescriptionCount DESC;
+
+--4. Which staff members work in each department, and what are their roles?
+
+SELECT S.FirstName, S.LastName, S.Role, D.DepartmentName
+FROM Staff S
+JOIN Department D ON S.DepartmentID = D.DepartmentID
+ORDER BY D.DepartmentName, S.Role;
+
+--5. What is the total revenue generated by department based on billing data?
+
+SELECT D.DepartmentName, SUM(B.TotalAmount) AS TotalRevenue
+FROM Billing B
+JOIN Appointment A ON B.PatientID = A.PatientID
+JOIN Department D ON A.DepartmentID = D.DepartmentID
+WHERE B.PaymentStatus = 'Paid'
+GROUP BY D.DepartmentName
+ORDER BY TotalRevenue DESC;
+
+--6. Which patients have unpaid bills, and how much do they owe?
+
+SELECT P.PatientID, P.FirstName, P.LastName, B.TotalAmount
+FROM Billing B
+JOIN Patient P ON B.PatientID = P.PatientID
+WHERE B.PaymentStatus = 'Unpaid';
+
+--7. What is the average length of stay for patients in each room type?
+
+SELECT R.RoomType, 
+       AVG(DATEDIFF(DAY, RA.AdmissionDate, ISNULL(RA.DischargeDate, GETDATE()))) AS AverageStay
+FROM Room R
+JOIN RoomAssignment RA ON R.RoomID = RA.RoomID
+GROUP BY R.RoomType;
+
+--8. What is the total revenue generated from paid bills by department?
+
+SELECT D.DepartmentName AS Department_Name, 
+       SUM(B.TotalAmount) AS Total_Revenue
+FROM Billing B
+JOIN Appointment A ON B.PatientID = A.PatientID
+JOIN Department D ON A.DepartmentID = D.DepartmentID
+WHERE B.PaymentStatus = 'Paid'
+GROUP BY D.DepartmentName;
+
+
+--9. Which staff members have the most patients assigned to them?
+
+SELECT S.FirstName, S.LastName, COUNT(A.PatientID) AS PatientCount
+FROM Staff S
+JOIN Appointment A ON S.DepartmentID = A.DepartmentID
+GROUP BY S.FirstName, S.LastName
+ORDER BY PatientCount DESC;
+
+--10. How many patients were admitted to each room type in the last year?
+
+SELECT R.RoomType, COUNT(RA.AssignmentID) AS PatientCount
+FROM RoomAssignment RA
+JOIN Room R ON RA.RoomID = R.RoomID
+WHERE RA.AdmissionDate >= DATEADD(YEAR, -1, GETDATE())
+GROUP BY R.RoomType
+ORDER BY PatientCount DESC;
+
+--11. Which department has the highest number of appointments?
+
+SELECT D.DepartmentName, COUNT(A.AppointmentID) AS AppointmentCount
+FROM Appointment A
+JOIN Department D ON A.DepartmentID = D.DepartmentID
+GROUP BY D.DepartmentName
+ORDER BY AppointmentCount DESC;
+
+--12. What are the most frequently prescribed medicines for ICU patients?
+
+SELECT M.MedicineName, COUNT(P.PrescriptionID) AS PrescriptionCount
+FROM Prescription P
+JOIN RoomAssignment RA ON P.RecordID = RA.AssignmentID
+JOIN Room R ON RA.RoomID = R.RoomID
+JOIN Medicine M ON P.MedicineID = M.MedicineID
+WHERE R.RoomType = 'ICU'
+GROUP BY M.MedicineName
+ORDER BY PrescriptionCount DESC;
+
+--13. What is the total number of admissions and discharges per month?
+
+SELECT 
+    MONTH(RA.AdmissionDate) AS Month, 
+    YEAR(RA.AdmissionDate) AS Year,
+    COUNT(CASE WHEN RA.AdmissionDate IS NOT NULL THEN 1 END) AS TotalAdmissions,
+    COUNT(CASE WHEN RA.DischargeDate IS NOT NULL THEN 1 END) AS TotalDischarges
+FROM RoomAssignment RA
+GROUP BY YEAR(RA.AdmissionDate), MONTH(RA.AdmissionDate)
+ORDER BY Year, Month;
+
+--14. Which rooms have the highest turnover rate (admissions/discharges)?
+
+SELECT R.RoomID, R.RoomType, COUNT(RA.AssignmentID) AS TurnoverCount
+FROM Room R
+JOIN RoomAssignment RA ON R.RoomID = RA.RoomID
+GROUP BY R.RoomID, R.RoomType
+ORDER BY TurnoverCount DESC;
+
+--15. Which patients have visited the hospital most frequently (based on appointments)?
+
+SELECT P.PatientID, P.FirstName, P.LastName, COUNT(A.AppointmentID) AS VisitCount
+FROM Patient P
+JOIN Appointment A ON P.PatientID = A.PatientID
+GROUP BY P.PatientID, P.FirstName, P.LastName
+ORDER BY VisitCount DESC;
+
+--Creating Admin
+
+-- 1. Create an Admin role with full privileges
+CREATE ROLE AdminTeam;
+GRANT CONTROL ON DATABASE::[Project 1] TO AdminRole;
+
+-- Create a NormalUser role with read-only privileges
+CREATE ROLE NormalUserTeam;
+GRANT SELECT ON DATABASE::[Project 1] TO NormalUserRole;
+
+-- 2. Create Login
+
+-- Create logins for Admin and Normal users
+CREATE LOGIN AdminUserLogin WITH PASSWORD = 'StrongPassword123!';
+CREATE LOGIN NormalUser1Login WITH PASSWORD = 'Password1!';
+CREATE LOGIN NormalUser2Login WITH PASSWORD = 'Password2!';
+CREATE LOGIN NormalUser3Login WITH PASSWORD = 'Password3!';
+CREATE LOGIN NormalUser4Login WITH PASSWORD = 'Password4!';
+CREATE LOGIN NormalUser5Login WITH PASSWORD = 'Password5!';
+
+--Check User and Role Assignments
+
+-- Now creating users and assigning them roles
+-- Admin user
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'AdminUser')
+BEGIN
+    CREATE USER AdminUser FOR LOGIN AdminUserLogin;
+    EXEC sp_addrolemember 'AdminTeam', 'AdminUser';
+END
+
+-- Normal users
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'NormalUser1')
+BEGIN
+    CREATE USER NormalUser1 FOR LOGIN NormalUser1Login;
+    EXEC sp_addrolemember 'NormalUserTeam', 'NormalUser1';
+END
+
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'NormalUser2')
+BEGIN
+    CREATE USER NormalUser2 FOR LOGIN NormalUser2Login;
+    EXEC sp_addrolemember 'NormalUserTeam', 'NormalUser2';
+END
+
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'NormalUser3')
+BEGIN
+    CREATE USER NormalUser3 FOR LOGIN NormalUser3Login;
+    EXEC sp_addrolemember 'NormalUserTeam', 'NormalUser3';
+END
+
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'NormalUser4')
+BEGIN
+    CREATE USER NormalUser4 FOR LOGIN NormalUser4Login;
+    EXEC sp_addrolemember 'NormalUserTeam', 'NormalUser4';
+END
+
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'NormalUser5')
+BEGIN
+    CREATE USER NormalUser5 FOR LOGIN NormalUser5Login;
+    EXEC sp_addrolemember 'NormalUserTeam', 'NormalUser5';
+END
+
+-- Check the roles assigned to users
+SELECT dp.name AS UserName, rp.name AS RoleName
+FROM sys.database_principals dp
+JOIN sys.database_role_members drm ON dp.principal_id = drm.member_principal_id
+JOIN sys.database_principals rp ON drm.role_principal_id = rp.principal_id;
+
