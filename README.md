@@ -1,7 +1,7 @@
   # main_portfolio_project
 This section focuses on showcasing proficiency in data analytics, Performed data cleaning, structured datasets, and wrote optimized SQL queries to extract insights. Created interactive Power BI dashboards showcasing trends and answering business questions, to highlight proficiency in data analytics, visualization, and driving data-informed decisions.
 
-## Project 1: HOSPITAL OPERATIONAL MANAGEMENT ANALYSIS​
+# Project 1: HOSPITAL OPERATIONAL MANAGEMENT ANALYSIS​
 
 ### About 
 
@@ -153,7 +153,7 @@ Key strategies include optimizing room utilization by promoting private rooms an
 
 In 'Hospital Operational Management Analysis' project effectively utilized SQL for database creation, data entry, and generating key business insights through optimized queries. Power BI was used to develop dynamic visualizations, including bar charts, pie charts, and KPIs, to showcase trends in room utilization, revenue generation, and prescription patterns. The project provided actionable strategies to optimize resource allocation, improve billing processes, and enhance patient satisfaction.  This project demonstrated the effective use of technologies to derive actionable business strategies, showcasing strong skills in data analysis, visualization, and informed decision-making.
 
-# Project 2:
+# Project 2: From Boom to Mainstream: Analyzing the Growth Trajectory of Cryptocurrency
 
 ## About
 
