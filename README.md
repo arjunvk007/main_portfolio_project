@@ -152,3 +152,19 @@ Key strategies include optimizing room utilization by promoting private rooms an
 **Conclusion**
 
 In 'Hospital Operational Management Analysis' project effectively utilized SQL for database creation, data entry, and generating key business insights through optimized queries. Power BI was used to develop dynamic visualizations, including bar charts, pie charts, and KPIs, to showcase trends in room utilization, revenue generation, and prescription patterns. The project provided actionable strategies to optimize resource allocation, improve billing processes, and enhance patient satisfaction.  This project demonstrated the effective use of technologies to derive actionable business strategies, showcasing strong skills in data analysis, visualization, and informed decision-making.
+
+# Project 2:
+
+## About
+
+The project focuses on analyzing the historical trends, growth factors, and predictive trajectories of the cryptocurrency market. With growing interest and volatility in cryptocurrencies, the study aims to identify the key drivers of adoption, price changes, and forecast future market trends.
+
+The analysis explores primary factors influencing cryptocurrency growth, price trends, market cap movements, and supply patterns for the top 10 cryptocurrencies (BTC, ETH, XRP, USDC, etc.). The dataset spans 2009–2024, with detailed insights from 2019–2023, incorporating attributes such as Price, Market Cap, Supply, and Volume.
+
+For data preparation, initial inspections and cleaning were performed in Excel to ensure formatting consistency and handle missing values. Multiple Excel files were combined into a structured format, ensuring time-series data readiness. Using Power BI, the finalized dataset was visualized to uncover trends, anomalies, and patterns, providing actionable insights into cryptocurrency market behavior and predictions for the next five years.
+
+
+
+
+
+
