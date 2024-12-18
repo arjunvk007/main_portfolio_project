@@ -163,8 +163,25 @@ The analysis explores primary factors influencing cryptocurrency growth, price t
 
 For data preparation, initial inspections and cleaning were performed in Excel to ensure formatting consistency and handle missing values. Multiple Excel files were combined into a structured format, ensuring time-series data readiness. Using Power BI, the finalized dataset was visualized to uncover trends, anomalies, and patterns, providing actionable insights into cryptocurrency market behavior and predictions for the next five years.
 
+**Steps**
 
+1. Data Cleaning:
 
+- Filled missing values:
+
+  Missing values were addressed by generating random values using find and replace option. This approach ensured dataset completeness for further analysis while maintaining variability without introducing systematic bias into the data.
+
+- Cell Formatting and Value Separation:
+  
+  Uniform number formatting (e.g., two decimal places for currency) and Conditional Formatting were applied to highlight anomalies in Excel. Power Query Editor were used to separate values based on delimiters to seperate date and time to seperate values to differentiate London and New York time zones.
+  
+- Trimming Data:
+
+  The TRIM function was used to remove leading, trailing, and extra spaces from text fields. This step ensured cleaner, more consistent data, eliminating unnecessary spaces that could interfere with data processing and formatting, thereby improving the overall quality and accuracy of the dataset.
+
+- Standardization and Adjustments:
+  
+  Rounding the decimal values to 2 to standardize numeric precision for currency field. The dataset was organized by sorting columns (e.g., by date or price) and filtering data to focus on relevant subsets. These steps ensured uniformity and streamlined the dataset for more reliable analysis and decision-making.
 
 
 
