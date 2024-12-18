@@ -169,7 +169,7 @@ For data preparation, initial inspections and cleaning were performed in Excel t
 
   Collected historical cryptocurrency dataset from Kaggle, which was then consolidated to include only the top 10 cryptocurrencies by market value. This dataset provides insights into the trends, performance, and behavior of the leading cryptocurrencies, aiding in analysis and forecasting within the crypto market.
 
-3. Data Cleaning:
+2. Data Cleaning:
 
 - Filled missing values:
 
@@ -187,7 +187,7 @@ For data preparation, initial inspections and cleaning were performed in Excel t
   
   Rounding the decimal values to 2 to standardize numeric precision for currency field. The dataset was organized by sorting columns (e.g., by date or price) and filtering data to focus on relevant subsets. These steps ensured uniformity and streamlined the dataset for more reliable analysis and decision-making.
 
-3.. Data Visualization:
+3. Data Visualization:
 
 
 
