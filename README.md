@@ -189,5 +189,16 @@ For data preparation, initial inspections and cleaning were performed in Excel t
 
 3. Data Visualization:
 
+- **Overview**
+
+![Overview](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Overview.png)
+
+- **Price Trends: London vs. New York**
+
+![Price Trends](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Price%20trends.png)
+
+- **Market Cap Contributions Over Time**
+
+![Market Caps](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Market%20Cap.png)
 
 
