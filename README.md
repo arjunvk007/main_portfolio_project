@@ -11,27 +11,27 @@ The 'Hospital Operational Management Analysis' project integrates SQL and Power 
 
 - #### **Creating tables (DDL statements):**
   
-1. Patient Table: PatientID, FirstName, LastName, DateOfBirth, Gender, Address, PhoneNumber, Email, EmergencyContactName, EmergencyContactPhone
+1. **Patient Table**: PatientID, FirstName, LastName, DateOfBirth, Gender, Address, PhoneNumber, Email, EmergencyContactName, EmergencyContactPhone
 
-2. Doctor Table: DoctorID, FirstName, LastName, Specialization, PhoneNumber, Email, DepartmentID, Availability
+2. **Doctor Table**: DoctorID, FirstName, LastName, Specialization, PhoneNumber, Email, DepartmentID, Availability
 
-3. Department Table: DepartmentID, DepartmentName, Location, PhoneExtension
+3. **Department Table**: DepartmentID, DepartmentName, Location, PhoneExtension
 
-4. Appointment Table: AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDate, AppointmentTime, Status (Scheduled, Completed, Cancelled)
+4. **Appointment Table**: AppointmentID, PatientID, DoctorID, DepartmentID, AppointmentDate, AppointmentTime, Status (Scheduled, Completed, Cancelled)
 
-5. Medical Records Table: RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TreatmentPlan, Prescription
+5. **Medical Records Table**: RecordID, PatientID, DoctorID, VisitDate, Diagnosis, TreatmentPlan, Prescription
 
-6. Prescription Table: PrescriptionID, RecordID, MedicineID, Dosage, Frequency, Duration
+6. **Prescription Table**: PrescriptionID, RecordID, MedicineID, Dosage, Frequency, Duration
 
-7. Medicine Table: MedicineID, MedicineName, Manufacturer, StockQuantity, Price
+7. **Medicine Table**: MedicineID, MedicineName, Manufacturer, StockQuantity, Price
 
-8. Billing Table: BillingID, PatientID, TotalAmount, PaymentStatus (Paid/Unpaid), PaymentDate, PaymentMethod
+8. **Billing Table**: BillingID, PatientID, TotalAmount, PaymentStatus (Paid/Unpaid), PaymentDate, PaymentMethod
 
-9. Staff Table: StaffID, FirstName, LastName, Role, DepartmentID, PhoneNumber, Email, ShiftHours
+9. **Staff Table**: StaffID, FirstName, LastName, Role, DepartmentID, PhoneNumber, Email, ShiftHours
 
-10.Room Table: RoomID, RoomNumber, DepartmentID, RoomType (General, Private, ICU, etc.), AvailabilityStatus
+10.**Room Table**: RoomID, RoomNumber, DepartmentID, RoomType (General, Private, ICU, etc.), AvailabilityStatus
 
-11.RoomAssignment Table: AssignmentID, RoomID, PatientID, AdmissionDate, DischargeDate
+11.**RoomAssignment Table**: AssignmentID, RoomID, PatientID, AdmissionDate, DischargeDate
 
 - #### **Loading data:**
 
@@ -40,65 +40,64 @@ Used sql queries to populate data
 - #### **Created DML queries**
 Formulated business questions and gathered insights for the business questions through queries.
 
-Business Question 1:
+**Business Question 1:**
 
 ![Business Question 1](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%201.png)
 
-Business Question 2:
+**Business Question 2:**
 
 ![Business Question 2](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ2.png)
 
-
-Business Question 3:
+**Business Question 3:**
 
 ![Business Question 3](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%203.png)
 
-Business Question 4:
+**Business Question 4:**
 
 ![Business Question 4](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%204.png)
 
-Business Question 5:
+**Business Question 5:**
 
 ![Business Question 5](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%205.png)
 
-Business Question 6:
+**Business Question 6:**
 
 ![Business Question 6](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%206.png)
 
-Business Question 7:
+**Business Question 7:**
 
 ![Business Question 7](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%207.png)
 
-Business Question 8:
+**Business Question 8:**
 
 ![Business Question 8](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%208.png)
 
-Business Question 9:
+**Business Question 9:**
 
 ![Business Question 9](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%209.png)
 
 
-Business Question 10:
+**Business Question 10:**
 
 ![Business Question 10](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%2010.png)
 
-Business Question 11:
+**Business Question 11:**
 
 ![Business Question 11](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%2011.png)
 
-Business Question 12:
+**Business Question 12:**
 
 ![Business Question 12](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%2012.png)
 
-Business Question 13:
+**Business Question 13:**
 
 ![Business Question 13](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%2013.png)
 
-Business Question 14:
+**Business Question 14:**
 
 ![Business Question 14](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%2014.png)
 
-Business Question 15:
+**Business Question 15:**
 
 ![Business Question 15](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%2015.png)
 
@@ -106,32 +105,32 @@ Business Question 15:
 
 -  #### **Charts used:**
   
-1. Bar Chart:
+1. **Bar Chart:**
 
 No. of Patients by Room Type (ICU, General, Private)
 Total Revenue by Department (General Surgery, Orthopedics, Neurology, etc.)
 
-2. Column Chart:
+2. **Column Chart:**
 Turnover Rate (Admissions/Discharges) by Room Type
 
-3. Pie Chart:
+3. **Pie Chart:**
 
 Medicine Prescription Count (Simvastatin, Metformin, Paracetamol, etc.)
 
-4. Stacked Bar Chart:
+4. **Stacked Bar Chart:**
 
 Average Patient Count by Room
 
-5. Radar Chart:
+5. **Radar Chart:**
 
 Number of Appointments by Department (Maternity, General Surgery, Neurology, etc.)
 
-6. Table:
+6. **Table:**
 
 Room Type and Average Stay
 ICU Prescribed Medicines and Count
 
-7. KPI Cards:
+7. **KPI Cards:**
 
 Total Appointments (244K)
 Number of Unpaid Patients (199)
@@ -156,7 +155,7 @@ In 'Hospital Operational Management Analysis' project effectively utilized SQL f
 
 # Project 2: From Boom to Mainstream: Analyzing the Growth Trajectory of Cryptocurrency
 
-## About
+## **About**
 
 The project focuses on analyzing the historical trends, growth factors, and predictive trajectories of the cryptocurrency market. With growing interest and volatility in cryptocurrencies, the study aims to identify the key drivers of adoption, price changes, and forecast future market trends.
 
@@ -186,7 +185,7 @@ Data collection posed challenges as no single source provided complete data for 
   
 3. ### **Data Visualization:**
 
-- ### Overview
+- ### **Overview**
 
 ![Overview](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Overview.png)
 
@@ -194,21 +193,21 @@ Designed an interactive dashboard to explore cryptocurrency market dynamics, foc
 
 Key Functionalities Implemented:
 
--- Multi-Visual Representation:
+-- **Multi-Visual Representation:**
 
-Radar Chart: Highlights top cryptocurrencies by market cap, providing a comparative view of their market dominance.
+**Radar Chart:** Highlights top cryptocurrencies by market cap, providing a comparative view of their market dominance.
 
-Line Charts: Show price trends versus supply for London and New York markets.
+**Line Charts:** Show price trends versus supply for London and New York markets.
 
-Stacked Area Chart: Visualizes the market cap distribution of all tracked cryptocurrencies over time.
+**Stacked Area Chart:** Visualizes the market cap distribution of all tracked cryptocurrencies over time.
 
--- Interactive Features:
+-- **Interactive Features:**
 
-Token Selection: Users can toggle between top-performing and high-growth tokens.
+**Token Selection:** Users can toggle between top-performing and high-growth tokens.
 
-Time Slider: Allows filtering data between 2019 and 2024 for dynamic trend analysis.
+**Time Slider:** Allows filtering data between 2019 and 2024 for dynamic trend analysis.
 
--- Advanced Data Analysis:
+-- **Advanced Data Analysis:**
 
 Combined price, supply, and market cap data to create insights on regional and global cryptocurrency dynamics.
 
@@ -216,7 +215,7 @@ Highlighted discrepancies between London and New York markets, offering localize
 
 Used Text box to show the predicted top 3 cryptocurrencies in the present and future from the analysis.
 
--- Design Enhancements:
+-- **Design Enhancements:**
 
 A clean, dark theme ensures a modern and professional look.
 
@@ -230,19 +229,19 @@ Developed a comprehensive visualization of cryptocurrency price trends, comparin
 
 Key Functionalities Implemented:
 
--- Data Aggregation: Aggregated the price data of each of the top 10 cryptocurrencies to use as values and plot in the chart for comparison.
+-- **Data Aggregation:** Aggregated the price data of each of the top 10 cryptocurrencies to use as values and plot in the chart for comparison.
 
--- Time-Series Visualization: Created dual-line charts to compare price trends for each token, enabling clear and actionable insights.
+-- **Time-Series Visualization:** Created dual-line charts to compare price trends for each token, enabling clear and actionable insights.
 
--- Trend Line: Used trend lines to display trends for multiple tokens simultaneously, to predict future price trends to currencies.
+-- **Trend Line:** Used trend lines to display trends for multiple tokens simultaneously, to predict future price trends to currencies.
 
--- Interactive Features: Incorporated filtering, zooming, and panning for enhanced usability and deeper analysis.
+-- **Interactive Features:** Incorporated filtering, zooming, and panning for enhanced usability and deeper analysis.
 
--- Anomaly Detection: Identified anomalies, such as price drops in stablecoins, using statistical methods and trendline analysis.
+-- **Anomaly Detection:** Identified anomalies, such as price drops in stablecoins, using statistical methods and trendline analysis.
 
--- User-Friendly Design: Applied a clean, dark theme to enhance readability and ensure a professional look.
+-- **User-Friendly Design:** Applied a clean, dark theme to enhance readability and ensure a professional look.
 
-- ### Market Cap Contributions Over Time
+- ### **Market Cap Contributions Over Time**
 
 ![Market Caps](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Market%20Cap.png)
 
@@ -250,14 +249,14 @@ Developed the visualization to track the market capitalization contributions of 
 
 Key Functionalities Implemented:
 
--- Data Aggregation: Collected and aggregated market cap data for multiple cryptocurrencies, ensuring accuracy and consistency over time.
+-- **Data Aggregation:** Collected and aggregated market cap data for multiple cryptocurrencies, ensuring accuracy and consistency over time.
 
--- Time-Series Visualization: Designed line charts for each token to display their market cap growth and fluctuations across years.
+-- **Time-Series Visualization:** Designed line charts for each token to display their market cap growth and fluctuations across years.
 
--- Multi-Panel Layout: Organized the dashboard into separate subplots, allowing comparative analysis of each cryptocurrency's market cap trends.
+-- **Multi-Panel Layout:** Organized the dashboard into separate subplots, allowing comparative analysis of each cryptocurrency's market cap trends.
 
--- Interactive Features: Added a time slider to filter data for custom date ranges.
+-- **Interactive Features:** Added a time slider to filter data for custom date ranges.
 
--- Anomaly Detection: Highlighted significant spikes and dips, such as DOGE’s 2021 surge and USDC’s post-2022 stability.
+-- **Anomaly Detection:** Highlighted significant spikes and dips, such as DOGE’s 2021 surge and USDC’s post-2022 stability.
 
--- User-Friendly Design: Applied a clean, dark theme to enhance readability and ensure a professional look.
+-- **User-Friendly Design:** Applied a clean, dark theme to enhance readability and ensure a professional look.
