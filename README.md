@@ -175,13 +175,13 @@ Data collection posed challenges as no single source provided complete data for 
 
 -  Date and Time Formatting: Utilized Power Query to split combined date-time columns into standardized date-only formats for consistency.
   
-- Table Formatting and Data Type Standardization: Enhanced readability by adding table borders and ensuring uniform data types across all columns.
+-  Table Formatting and Data Type Standardization: Enhanced readability by adding table borders and ensuring uniform data types across all columns.
   
-- Precision Standardization: Applied rounding to ensure numeric columns maintained a precision of two decimal places.
+-  Precision Standardization: Applied rounding to ensure numeric columns maintained a precision of two decimal places.
   
-- Duplicate Check: Verified datasets to confirm the absence of duplicate records, ensuring data accuracy.
+-  Duplicate Check: Verified datasets to confirm the absence of duplicate records, ensuring data accuracy.
   
-- Null Value Handling: Filled missing values in critical columns to maintain dataset continuity and reliability for analysis. To address missing data, interpolation estimated values for SOL based on trends, while median imputation filled minor gaps in XRP and ADA. BNB was removed due to insufficient data, and critical time rows were dropped to maintain time series integrity. These techniques ensured data quality and consistency.
+-  Null Value Handling: Filled missing values in critical columns to maintain dataset continuity and reliability for analysis. To address missing data, interpolation estimated values for SOL based on trends, while median imputation filled minor gaps in XRP and ADA. BNB was removed due to insufficient data, and critical time rows were dropped to maintain time series integrity. These techniques ensured data quality and consistency.
   
 3. ### **Data Visualization:**
 
@@ -193,7 +193,7 @@ Designed an interactive dashboard to explore cryptocurrency market dynamics, foc
 
 Key Functionalities Implemented:
 
--- **Multi-Visual Representation:**
+--  **Multi-Visual Representation:**
 
 **Radar Chart:** Highlights top cryptocurrencies by market cap, providing a comparative view of their market dominance.
 
@@ -201,13 +201,13 @@ Key Functionalities Implemented:
 
 **Stacked Area Chart:** Visualizes the market cap distribution of all tracked cryptocurrencies over time.
 
--- **Interactive Features:**
+--  **Interactive Features:**
 
 **Token Selection:** Users can toggle between top-performing and high-growth tokens.
 
 **Time Slider:** Allows filtering data between 2019 and 2024 for dynamic trend analysis.
 
--- **Advanced Data Analysis:**
+--  **Advanced Data Analysis:**
 
 Combined price, supply, and market cap data to create insights on regional and global cryptocurrency dynamics.
 
@@ -215,7 +215,7 @@ Highlighted discrepancies between London and New York markets, offering localize
 
 Used Text box to show the predicted top 3 cryptocurrencies in the present and future from the analysis.
 
--- **Design Enhancements:**
+--  **Design Enhancements:**
 
 A clean, dark theme ensures a modern and professional look.
 
@@ -229,17 +229,17 @@ Developed a comprehensive visualization of cryptocurrency price trends, comparin
 
 Key Functionalities Implemented:
 
--- **Data Aggregation:** Aggregated the price data of each of the top 10 cryptocurrencies to use as values and plot in the chart for comparison.
+--  **Data Aggregation:** Aggregated the price data of each of the top 10 cryptocurrencies to use as values and plot in the chart for comparison.
 
--- **Time-Series Visualization:** Created dual-line charts to compare price trends for each token, enabling clear and actionable insights.
+--  **Time-Series Visualization:** Created dual-line charts to compare price trends for each token, enabling clear and actionable insights.
 
--- **Trend Line:** Used trend lines to display trends for multiple tokens simultaneously, to predict future price trends to currencies.
+--  **Trend Line:** Used trend lines to display trends for multiple tokens simultaneously, to predict future price trends to currencies.
 
--- **Interactive Features:** Incorporated filtering, zooming, and panning for enhanced usability and deeper analysis.
+--  **Interactive Features:** Incorporated filtering, zooming, and panning for enhanced usability and deeper analysis.
 
--- **Anomaly Detection:** Identified anomalies, such as price drops in stablecoins, using statistical methods and trendline analysis.
+--  **Anomaly Detection:** Identified anomalies, such as price drops in stablecoins, using statistical methods and trendline analysis.
 
--- **User-Friendly Design:** Applied a clean, dark theme to enhance readability and ensure a professional look.
+--  **User-Friendly Design:** Applied a clean, dark theme to enhance readability and ensure a professional look.
 
 - ### **Market Cap Contributions Over Time**
 
@@ -249,14 +249,14 @@ Developed the visualization to track the market capitalization contributions of 
 
 Key Functionalities Implemented:
 
--- **Data Aggregation:** Collected and aggregated market cap data for multiple cryptocurrencies, ensuring accuracy and consistency over time.
+--  **Data Aggregation:** Collected and aggregated market cap data for multiple cryptocurrencies, ensuring accuracy and consistency over time.
 
--- **Time-Series Visualization:** Designed line charts for each token to display their market cap growth and fluctuations across years.
+--  **Time-Series Visualization:** Designed line charts for each token to display their market cap growth and fluctuations across years.
 
--- **Multi-Panel Layout:** Organized the dashboard into separate subplots, allowing comparative analysis of each cryptocurrency's market cap trends.
+--  **Multi-Panel Layout:** Organized the dashboard into separate subplots, allowing comparative analysis of each cryptocurrency's market cap trends.
 
--- **Interactive Features:** Added a time slider to filter data for custom date ranges.
+--  **Interactive Features:** Added a time slider to filter data for custom date ranges.
 
--- **Anomaly Detection:** Highlighted significant spikes and dips, such as DOGE’s 2021 surge and USDC’s post-2022 stability.
+--  **Anomaly Detection:** Highlighted significant spikes and dips, such as DOGE’s 2021 surge and USDC’s post-2022 stability.
 
--- **User-Friendly Design:** Applied a clean, dark theme to enhance readability and ensure a professional look.
+--  **User-Friendly Design:** Applied a clean, dark theme to enhance readability and ensure a professional look.
