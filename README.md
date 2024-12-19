@@ -165,28 +165,24 @@ For data preparation, initial inspections and cleaning were performed in Excel t
 
 **Steps**
 
-1. Data Gathering:
+1. Data Collection and Challenges
 
-  Collected historical cryptocurrency dataset from Kaggle, which was then consolidated to include only the top 10 cryptocurrencies by market value. This dataset provides insights into the trends, performance, and behavior of the leading cryptocurrencies, aiding in analysis and forecasting within the crypto market.
+The dataset focuses on the top 10 cryptocurrencies by market cap, based on CoinMarketCap rankings as of November 1, 2024. Missing data for certain cryptocurrencies was replaced with the next available asset to maintain consistency. The primary attributes include Price, Market Cap, Current Supply, and Volume, with data provided in both CSV and Excel formats. The dataset spans 2009–2024, with a focused analysis on the years 2019–2023 for detailed trend insights.
+
+Data collection posed challenges as no single source provided complete data for all attributes, requiring integration from multiple sources and extensive cross-referencing to ensure accuracy. Time-based price data presented specific issues, with the Principal Market Price missing for some assets. To address this, alternative benchmarks were used: 4:00 pm New York Price (aligned with U.S. market close) and 11:00 am London Price (covering Asian and European trading). However, these alternatives may miss daily highs/lows, limiting volatility insights..
 
 2. Data Cleaning:
 
-- Filled missing values:
-
-  Missing values were addressed by generating random values using find and replace option. This approach ensured dataset completeness for further analysis while maintaining variability without introducing systematic bias into the data.
-
-- Cell Formatting and Value Separation:
+-  Date and Time Formatting: Utilized Power Query to split combined date-time columns into standardized date-only formats for consistency.
   
-  Uniform number formatting (e.g., two decimal places for currency) and Conditional Formatting were applied to highlight anomalies in Excel. Power Query Editor were used to separate values based on delimiters to seperate date and time to seperate values to differentiate London and New York time zones.
+- Table Formatting and Data Type Standardization: Enhanced readability by adding table borders and ensuring uniform data types across all columns.
   
-- Trimming Data:
-
-  The TRIM function was used to remove leading, trailing, and extra spaces from text fields. This step ensured cleaner, more consistent data, eliminating unnecessary spaces that could interfere with data processing and formatting, thereby improving the overall quality and accuracy of the dataset.
-
-- Standardization and Adjustments:
+- Precision Standardization: Applied rounding to ensure numeric columns maintained a precision of two decimal places.
   
-  Rounding the decimal values to 2 to standardize numeric precision for currency field. The dataset was organized by sorting columns (e.g., by date or price) and filtering data to focus on relevant subsets. These steps ensured uniformity and streamlined the dataset for more reliable analysis and decision-making.
-
+- Duplicate Check: Verified datasets to confirm the absence of duplicate records, ensuring data accuracy.
+  
+- Null Value Handling: Filled missing values in critical columns to maintain dataset continuity and reliability for analysis.
+  
 3. Data Visualization:
 
 - **Overview**
