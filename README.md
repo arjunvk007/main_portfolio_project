@@ -163,15 +163,15 @@ The analysis explores primary factors influencing cryptocurrency growth, price t
 
 For data preparation, initial inspections and cleaning were performed in Excel to ensure formatting consistency and handle missing values. Multiple Excel files were combined into a structured format, ensuring time-series data readiness. Using Power BI, the finalized dataset was visualized to uncover trends, anomalies, and patterns, providing actionable insights into cryptocurrency market behavior and predictions for the next five years.
 
-**Steps**
+## **Steps**
 
-1. Data Collection and Challenges
+1. **Data Collection and Challenges**
 
 The dataset focuses on the top 10 cryptocurrencies by market cap, based on CoinMarketCap rankings as of November 1, 2024. Missing data for certain cryptocurrencies was replaced with the next available asset to maintain consistency. The primary attributes include Price, Market Cap, Current Supply, and Volume, with data provided in both CSV and Excel formats. The dataset spans 2009–2024, with a focused analysis on the years 2019–2023 for detailed trend insights.
 
 Data collection posed challenges as no single source provided complete data for all attributes, requiring integration from multiple sources and extensive cross-referencing to ensure accuracy. Time-based price data presented specific issues, with the Principal Market Price missing for some assets. To address this, alternative benchmarks were used: 4:00 pm New York Price (aligned with U.S. market close) and 11:00 am London Price (covering Asian and European trading). However, these alternatives may miss daily highs/lows, limiting volatility insights..
 
-2. Data Cleaning:
+2. **Data Cleaning:**
 
 -  Date and Time Formatting: Utilized Power Query to split combined date-time columns into standardized date-only formats for consistency.
   
@@ -185,15 +185,15 @@ Data collection posed challenges as no single source provided complete data for 
   
 3. Data Visualization:
 
-- **Overview**
+- Overview
 
 ![Overview](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Overview.png)
 
-- **Price Trends: London vs. New York**
+- Price Trends: London vs. New York
 
 ![Price Trends](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Price%20trends.png)
 
-- **Market Cap Contributions Over Time**
+- Market Cap Contributions Over Time
 
 ![Market Caps](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Market%20Cap.png)
 
