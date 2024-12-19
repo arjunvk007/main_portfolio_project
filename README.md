@@ -189,6 +189,36 @@ Data collection posed challenges as no single source provided complete data for 
 
 ![Overview](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Overview.png)
 
+designed an interactive dashboard to explore cryptocurrency market dynamics, focusing on growth potential, market capitalization, and price-supply relationships for key tokens (e.g., BTC, ETH, ADA).
+
+Key Functionalities Implemented:
+
+-- Multi-Visual Representation:
+
+Radar Chart: Highlights top cryptocurrencies by market cap, providing a comparative view of their market dominance.
+
+Line Charts: Show price trends versus supply for London and New York markets.
+
+Stacked Area Chart: Visualizes the market cap distribution of all tracked cryptocurrencies over time.
+
+-- Interactive Features:
+
+Token Selection: Users can toggle between top-performing and high-growth tokens.
+
+Time Slider: Allows filtering data between 2019 and 2024 for dynamic trend analysis.
+
+-- Advanced Data Analysis:
+
+Combined price, supply, and market cap data to create insights on regional and global cryptocurrency dynamics.
+
+Highlighted discrepancies between London and New York markets, offering localized insights.
+
+-- Design Enhancements:
+
+A clean, dark theme ensures a modern and professional look.
+
+Intuitive layout simplifies navigation for quick decision-making.
+
 - Price Trends: London vs. New York
 
 ![Price Trends](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Price%20trends.png)
@@ -197,7 +227,7 @@ Developed a comprehensive visualization of cryptocurrency price trends, comparin
 
 Key Functionalities Implemented:
 
-Data Aggregation: Aggregated the price data of each of the top 10 crypto-currencies to use as values and plot in the chart for comparison.
+Data Aggregation: Aggregated the price data of each of the top 10 cryptocurrencies to use as values and plot in the chart for comparison.
 
 Time-Series Visualization: Created dual-line charts to compare price trends for each token, enabling clear and actionable insights.
 
