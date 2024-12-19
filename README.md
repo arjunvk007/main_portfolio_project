@@ -189,7 +189,7 @@ Data collection posed challenges as no single source provided complete data for 
 
 ![Overview](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Overview.png)
 
-designed an interactive dashboard to explore cryptocurrency market dynamics, focusing on growth potential, market capitalization, and price-supply relationships for key tokens (e.g., BTC, ETH, ADA).
+Designed an interactive dashboard to explore cryptocurrency market dynamics, focusing on growth potential, market capitalization, and price-supply relationships for key tokens (e.g., BTC, ETH, ADA).
 
 Key Functionalities Implemented:
 
@@ -212,6 +212,8 @@ Time Slider: Allows filtering data between 2019 and 2024 for dynamic trend analy
 Combined price, supply, and market cap data to create insights on regional and global cryptocurrency dynamics.
 
 Highlighted discrepancies between London and New York markets, offering localized insights.
+
+Used Text box to show the predicted top 3 cryptocurrencies in the present and future from the analysis.
 
 -- Design Enhancements:
 
