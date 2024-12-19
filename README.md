@@ -181,7 +181,7 @@ Data collection posed challenges as no single source provided complete data for 
   
 - Duplicate Check: Verified datasets to confirm the absence of duplicate records, ensuring data accuracy.
   
-- Null Value Handling: Filled missing values in critical columns to maintain dataset continuity and reliability for analysis.
+- Null Value Handling: Filled missing values in critical columns to maintain dataset continuity and reliability for analysis. To address missing data, interpolation estimated values for SOL based on trends, while median imputation filled minor gaps in XRP and ADA. BNB was removed due to insufficient data, and critical time rows were dropped to maintain time series integrity. These techniques ensured data quality and consistency.
   
 3. Data Visualization:
 
@@ -193,8 +193,38 @@ Data collection posed challenges as no single source provided complete data for 
 
 ![Price Trends](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Price%20trends.png)
 
+Developed a comprehensive visualization of cryptocurrency price trends, comparing 11:00 AM London and 4:00 PM New York market data across multiple tokens (e.g., BTC, ETH, ADA).
+
+Key Functionalities Implemented:
+
+Data Aggregation: Aggregated the price data of each of the top 10 crypto-currencies to use as values and plot in the chart for comparison.
+
+Time-Series Visualization: Created dual-line charts to compare price trends for each token, enabling clear and actionable insights.
+
+Trend Line: Used trend lines to display trends for multiple tokens simultaneously, to predict future price trends to currencies.
+
+Interactive Features: Incorporated filtering, zooming, and panning for enhanced usability and deeper analysis.
+
+Anomaly Detection: Identified anomalies, such as price drops in stablecoins, using statistical methods and trendline analysis.
+
+User-Friendly Design: Applied a clean, dark theme to enhance readability and ensure a professional look.
+
 - Market Cap Contributions Over Time
 
 ![Market Caps](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Market%20Cap.png)
 
+Developed the visualization to track the market capitalization contributions of key cryptocurrencies (e.g., BTC, ETH, ADA) over time, showcasing trends and insights from 2019 to 2024.
 
+Key Functionalities Implemented:
+
+Data Aggregation: Collected and aggregated market cap data for multiple cryptocurrencies, ensuring accuracy and consistency over time.
+
+Time-Series Visualization: Designed line charts for each token to display their market cap growth and fluctuations across years.
+
+Multi-Panel Layout: Organized the dashboard into separate subplots, allowing comparative analysis of each cryptocurrency's market cap trends.
+
+Interactive Features: Added a time slider to filter data for custom date ranges.
+
+Anomaly Detection: Highlighted significant spikes and dips, such as DOGE’s 2021 surge and USDC’s post-2022 stability.
+
+User-Friendly Design: Applied a clean, dark theme to enhance readability and ensure a professional look.
