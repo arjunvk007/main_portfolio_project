@@ -9,7 +9,7 @@ The 'Hospital Operational Management Analysis' project integrates SQL and Power 
 
 ### Steps 
 
-- ### **Creating tables (DDL statements):**
+- #### **Creating tables (DDL statements):**
   
 1. Patient Table: PatientID, FirstName, LastName, DateOfBirth, Gender, Address, PhoneNumber, Email, EmergencyContactName, EmergencyContactPhone
 
@@ -33,11 +33,11 @@ The 'Hospital Operational Management Analysis' project integrates SQL and Power 
 
 11.RoomAssignment Table: AssignmentID, RoomID, PatientID, AdmissionDate, DischargeDate
 
-- ### **Loading data:**
+- #### **Loading data:**
 
 Used sql queries to populate data
 
-- **Created DML queries**
+- #### **Created DML queries**
 Formulated business questions and gathered insights for the business questions through queries.
 
 Business Question 1:
@@ -102,9 +102,10 @@ Business Question 15:
 
 ![Business Question 15](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/BQ%2015.png)
 
-- **Connected the data in SQL to powerBI, to create dashboard**
+- #### **Connected the data in SQL to powerBI, to create dashboard**
 
--  **Charts used:**
+-  #### **Charts used:**
+  
 1. Bar Chart:
 
 No. of Patients by Room Type (ICU, General, Private)
@@ -140,16 +141,16 @@ Doctor with Most Patients (Alice Brown)
 
 ![Visualization](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Visualization.png)
 
-**Insights:**
+### **Insights:**
 
 
 The analysis highlights key hospital operational insights and strategies. ICU rooms show the highest utilization (48.87%) and turnover, while private rooms are underutilized (17.88%), suggesting opportunities for marketing or pricing adjustments. General Surgery and Orthopedics contribute the most revenue (~$1.1M), while Dermatology and Emergency departments underperform. Medicine prescriptions are balanced, with frequent ICU drugs like Amoxicillin and Aspirin requiring stock monitoring and supplier negotiations. 
 
-**Strategies:**
+### **Strategies:**
 
 Key strategies include optimizing room utilization by promoting private rooms and reallocating ICU resources to manage high demand. Enhance billing processes with automated reminders and flexible payment plans to reduce unpaid bills. Focus on high-revenue departments like General Surgery and Orthopedics by allocating more resources. Improve medicine management through bulk supplier negotiations for high-demand drugs. Expand ICU/general room capacities and implement patient feedback systems and loyalty programs to enhance experiences and retention.
 
-**Conclusion**
+### **Conclusion**
 
 In 'Hospital Operational Management Analysis' project effectively utilized SQL for database creation, data entry, and generating key business insights through optimized queries. Power BI was used to develop dynamic visualizations, including bar charts, pie charts, and KPIs, to showcase trends in room utilization, revenue generation, and prescription patterns. The project provided actionable strategies to optimize resource allocation, improve billing processes, and enhance patient satisfaction.  This project demonstrated the effective use of technologies to derive actionable business strategies, showcasing strong skills in data analysis, visualization, and informed decision-making.
 
@@ -165,13 +166,13 @@ For data preparation, initial inspections and cleaning were performed in Excel t
 
 ## **Steps**
 
-1. **Data Collection and Challenges**
+1. ### **Data Collection and Challenges**
 
 The dataset focuses on the top 10 cryptocurrencies by market cap, based on CoinMarketCap rankings as of November 1, 2024. Missing data for certain cryptocurrencies was replaced with the next available asset to maintain consistency. The primary attributes include Price, Market Cap, Current Supply, and Volume, with data provided in both CSV and Excel formats. The dataset spans 2009–2024, with a focused analysis on the years 2019–2023 for detailed trend insights.
 
 Data collection posed challenges as no single source provided complete data for all attributes, requiring integration from multiple sources and extensive cross-referencing to ensure accuracy. Time-based price data presented specific issues, with the Principal Market Price missing for some assets. To address this, alternative benchmarks were used: 4:00 pm New York Price (aligned with U.S. market close) and 11:00 am London Price (covering Asian and European trading). However, these alternatives may miss daily highs/lows, limiting volatility insights..
 
-2. **Data Cleaning:**
+2. ### **Data Cleaning:**
 
 -  Date and Time Formatting: Utilized Power Query to split combined date-time columns into standardized date-only formats for consistency.
   
@@ -183,9 +184,9 @@ Data collection posed challenges as no single source provided complete data for 
   
 - Null Value Handling: Filled missing values in critical columns to maintain dataset continuity and reliability for analysis. To address missing data, interpolation estimated values for SOL based on trends, while median imputation filled minor gaps in XRP and ADA. BNB was removed due to insufficient data, and critical time rows were dropped to maintain time series integrity. These techniques ensured data quality and consistency.
   
-3. **Data Visualization:**
+3. ### **Data Visualization:**
 
-- Overview
+- #### Overview
 
 ![Overview](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Overview.png)
 
@@ -193,7 +194,7 @@ Designed an interactive dashboard to explore cryptocurrency market dynamics, foc
 
 Key Functionalities Implemented:
 
--- Multi-Visual Representation:
+-- ##### Multi-Visual Representation:
 
 Radar Chart: Highlights top cryptocurrencies by market cap, providing a comparative view of their market dominance.
 
@@ -201,13 +202,13 @@ Line Charts: Show price trends versus supply for London and New York markets.
 
 Stacked Area Chart: Visualizes the market cap distribution of all tracked cryptocurrencies over time.
 
--- Interactive Features:
+-- ##### Interactive Features:
 
 Token Selection: Users can toggle between top-performing and high-growth tokens.
 
 Time Slider: Allows filtering data between 2019 and 2024 for dynamic trend analysis.
 
--- Advanced Data Analysis:
+-- ##### Advanced Data Analysis:
 
 Combined price, supply, and market cap data to create insights on regional and global cryptocurrency dynamics.
 
@@ -215,13 +216,13 @@ Highlighted discrepancies between London and New York markets, offering localize
 
 Used Text box to show the predicted top 3 cryptocurrencies in the present and future from the analysis.
 
--- Design Enhancements:
+-- ##### Design Enhancements:
 
 A clean, dark theme ensures a modern and professional look.
 
 Intuitive layout simplifies navigation for quick decision-making.
 
-- Price Trends: London vs. New York
+- #### Price Trends: London vs. New York
 
 ![Price Trends](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Price%20trends.png)
 
@@ -229,19 +230,19 @@ Developed a comprehensive visualization of cryptocurrency price trends, comparin
 
 Key Functionalities Implemented:
 
--- Data Aggregation: Aggregated the price data of each of the top 10 cryptocurrencies to use as values and plot in the chart for comparison.
+-- #### Data Aggregation: Aggregated the price data of each of the top 10 cryptocurrencies to use as values and plot in the chart for comparison.
 
--- Time-Series Visualization: Created dual-line charts to compare price trends for each token, enabling clear and actionable insights.
+-- #### Time-Series Visualization: Created dual-line charts to compare price trends for each token, enabling clear and actionable insights.
 
--- Trend Line: Used trend lines to display trends for multiple tokens simultaneously, to predict future price trends to currencies.
+-- #### Trend Line: Used trend lines to display trends for multiple tokens simultaneously, to predict future price trends to currencies.
 
--- Interactive Features: Incorporated filtering, zooming, and panning for enhanced usability and deeper analysis.
+-- #### Interactive Features: Incorporated filtering, zooming, and panning for enhanced usability and deeper analysis.
 
--- Anomaly Detection: Identified anomalies, such as price drops in stablecoins, using statistical methods and trendline analysis.
+-- #### Anomaly Detection: Identified anomalies, such as price drops in stablecoins, using statistical methods and trendline analysis.
 
--- User-Friendly Design: Applied a clean, dark theme to enhance readability and ensure a professional look.
+-- #### User-Friendly Design: Applied a clean, dark theme to enhance readability and ensure a professional look.
 
-- Market Cap Contributions Over Time
+- #### Market Cap Contributions Over Time
 
 ![Market Caps](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Market%20Cap.png)
 
@@ -249,14 +250,14 @@ Developed the visualization to track the market capitalization contributions of 
 
 Key Functionalities Implemented:
 
--- Data Aggregation: Collected and aggregated market cap data for multiple cryptocurrencies, ensuring accuracy and consistency over time.
+-- #### Data Aggregation: Collected and aggregated market cap data for multiple cryptocurrencies, ensuring accuracy and consistency over time.
 
--- Time-Series Visualization: Designed line charts for each token to display their market cap growth and fluctuations across years.
+-- #### Time-Series Visualization: Designed line charts for each token to display their market cap growth and fluctuations across years.
 
--- Multi-Panel Layout: Organized the dashboard into separate subplots, allowing comparative analysis of each cryptocurrency's market cap trends.
+-- #### Multi-Panel Layout: Organized the dashboard into separate subplots, allowing comparative analysis of each cryptocurrency's market cap trends.
 
--- Interactive Features: Added a time slider to filter data for custom date ranges.
+-- #### Interactive Features: Added a time slider to filter data for custom date ranges.
 
--- Anomaly Detection: Highlighted significant spikes and dips, such as DOGE’s 2021 surge and USDC’s post-2022 stability.
+-- #### Anomaly Detection: Highlighted significant spikes and dips, such as DOGE’s 2021 surge and USDC’s post-2022 stability.
 
--- User-Friendly Design: Applied a clean, dark theme to enhance readability and ensure a professional look.
+-- #### User-Friendly Design: Applied a clean, dark theme to enhance readability and ensure a professional look.
