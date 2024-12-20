@@ -261,6 +261,6 @@ Key Functionalities Implemented:
 
 --  **User-Friendly Design:** Applied a clean, dark theme to enhance readability and ensure a professional look.
 
-**Conclusion**
+## **Conclusion**
 
 The analysis of the top cryptocurrencies through price trends, market capitalization, and growth trajectories has provided valuable insights into the evolving dynamics of the cryptocurrency market. By leveraging data visualization, the study identified dominant players, stablecoins, and promising altcoins, shedding light on their potential for future growth. The integration of time-based benchmarks and robust data cleaning methods ensured accuracy and consistency in the dataset, enabling informed predictions.
