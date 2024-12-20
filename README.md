@@ -264,3 +264,9 @@ Key Functionalities Implemented:
 ## **Conclusion**
 
 The analysis of the top cryptocurrencies through price trends, market capitalization, and growth trajectories has provided valuable insights into the evolving dynamics of the cryptocurrency market. By leveraging data visualization, the study identified dominant players, stablecoins, and promising altcoins, shedding light on their potential for future growth. The integration of time-based benchmarks and robust data cleaning methods ensured accuracy and consistency in the dataset, enabling informed predictions.
+
+# Project 3: Cyclistic Bike Share Analysis
+
+## About
+
+This case study examines the differing usage patterns between casual riders and annual members of Cyclistic’s bike-share services, with the goal of converting casual riders into annual members. Microsoft Excel was used for data cleaning, including standardizing formats, adding columns like duration and day_of_week, addressing missing data, and identifying duplicate entries. Key functions such as mean, median, and mode calculations, along with the CountIF function, were employed to determine the total number of casual and member riders. Pivot tables were leveraged to analyze average ride durations for each group, while bar charts were created to visualize usage trends by user type and day of the week.
