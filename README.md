@@ -3,11 +3,11 @@ This section focuses on showcasing proficiency in data analytics, Performed data
 
 # Project 1: HOSPITAL OPERATIONAL MANAGEMENT ANALYSIS​
 
-### About 
+## About 
 
 The 'Hospital Operational Management Analysis' project integrates SQL and Power BI to analyze hospital data, improve decision-making, and optimize resource utilization. SQL was used to create the database, define attributes, and populate data. Key business insights, related to room utilization, revenue generation, and medicine patterns, were derived through queries. Power BI dashboards were developed to visualize trends, including patient room turnover, department revenues, and prescription distributions, offering actionable strategies to optimize operations, enhance billing processes, and improve patient satisfaction (business questions) to improve the hospital operational performance. This project showcases expertise in data modeling, SQL analysis, and impactful visualizations.
 
-### Steps 
+## Steps 
 
 - #### **Creating tables (DDL statements):**
   
@@ -270,3 +270,9 @@ The analysis of the top cryptocurrencies through price trends, market capitaliza
 ## About
 
 This case study examines the differing usage patterns between casual riders and annual members of Cyclistic’s bike-share services, with the goal of converting casual riders into annual members. Microsoft Excel was used for data cleaning, including standardizing formats, adding columns like duration and day_of_week, addressing missing data, and identifying duplicate entries. Key functions such as mean, median, and mode calculations, along with the CountIF function, were employed to determine the total number of casual and member riders. Pivot tables were leveraged to analyze average ride durations for each group, while bar charts were created to visualize usage trends by user type and day of the week.
+
+## Steps
+
+ ### **Data Collection and Challenges**
+
+ The data provided with the case study was distributed across multiple monthly files for 2023 and 2024, presenting a significant challenge. The data cleaning process was time-consuming, as it required careful review and processing of each individual file. Aggregating the data for analysis involved performing calculations separately for each file. To streamline usage and improve accessibility, all the data needed to be consolidated into a single comprehensive file, ensuring efficient analysis and easier access.
