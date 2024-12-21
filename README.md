@@ -417,12 +417,12 @@ The analysis of Cyclistic’s bike-share data highlights distinct usage patterns
 
 Key recommendations include:
 
-**Weekend Promotions for Casual Riders:** Offer discounts or special packages during weekends to align with casual riders' behavior and encourage higher usage.
+- **Weekend Promotions for Casual Riders:** Offer discounts or special packages during weekends to align with casual riders' behavior and encourage higher usage.
 
-**Highlight Membership Benefits:** Promote membership plans tailored to frequent riders, emphasizing cost savings and convenience, especially for commuters.
+- **Highlight Membership Benefits:** Promote membership plans tailored to frequent riders, emphasizing cost savings and convenience, especially for commuters.
 
-**Seasonal Flexibility in Memberships:** Introduce short-term or flexible membership plans to attract casual riders during warmer months, fostering engagement and eventual conversion to annual memberships.
+- **Seasonal Flexibility in Memberships:** Introduce short-term or flexible membership plans to attract casual riders during warmer months, fostering engagement and eventual conversion to annual memberships.
 
-**Increased Availability of Electric Bikes:** Scale up the availability and promotion of electric bikes, as their popularity continues to rise, particularly among casual users.
+- **Increased Availability of Electric Bikes:** Scale up the availability and promotion of electric bikes, as their popularity continues to rise, particularly among casual users.
 
 By implementing these targeted strategies, Cyclistic can effectively bridge the gap between casual and annual riders, improve user retention, and drive profitability, positioning itself for sustainable business growth in the competitive bike-share industry.
