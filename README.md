@@ -321,9 +321,65 @@ Examples:
 
 ![Cyclistic Bike Share Analysis 2023](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Bike%20share%20Analysis%202023.png)
 
+**1. Data Visualization:**
+   
+**Line Charts:**
+
+Used to display the number of ride members (Casual and Members) by bike type (Classic and Electric) over months (September to December).
+
+Show trends in bike usage between Casual and Membership users.
+
+**KPI Cards:**
+
+Highlights key metrics like:
+
+Average duration of rides for each month.
+
+Total number of members for September, October, November, and December.
+
+Easy to track the overall trend of participation and average time spent.
+
+**2. Filters:**
+   
+Dropdown filters for months and user types (Casual or Member) enable dynamic interactivity.
+
+Allows users to focus on specific groups or periods for better insight.
+
+**3. Insight Generation:**
+
+Feedback/Observation Section: Summarizes key trends (e.g., shift from classic bikes to electric bikes, seasonal effects on bike usage).
+
 **Cyclistic Bike Share Analysis 2024 Q1**
 
 ![Cyclistic Bike Share Analysis 2024 Q1](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Bike%20share%20Analysis%202024%20Q1.png)
+
+**1. Data Visualization:**
+   
+Line Charts:
+
+Similar functionality as the first image, comparing Casual and Membership usage by bike type.
+
+Covers January to April of 2024.
+
+KPI Cards:
+
+Displays metrics such as:
+
+Total number of members for January, February, March, and April.
+
+Average daily usage for each month.
+
+**3. Filters:**
+   
+Monthly and user-type filters are included to analyze different periods and user categories.
+
+**4. Insight Generation:**
+   
+Feedback Section:
+
+Highlights patterns, such as the decline in bike usage due to weather and the gradual recovery in Q1.
+
+Notes increased electric bike demand in April.
 
 **Cyclistic Bike Share Analysis 2024 Q2**
 
