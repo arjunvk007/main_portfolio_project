@@ -299,7 +299,7 @@ The data provided with the case study was distributed across multiple monthly fi
 
 - Proper Naming: Followed consistent naming conventions for cleaned datasets.
 
-3. **Analyze**
+3. ### **Analyze**
 
 - Mean, median, and mode functions were applied to analyze ride durations and the days of the week.
 
@@ -315,13 +315,13 @@ Examples:
 
 ![202310](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/202310.png)
 
-4. **Data Visualization**
+4. ### **Data Visualization**
 
 **Cyclistic Bike Share Analysis 2023**
 
 ![Cyclistic Bike Share Analysis 2023](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Bike%20share%20Analysis%202023.png)
 
-**1. Data Visualization:**
+**1. Graphs:**
    
 **Line Charts:**
 
@@ -353,7 +353,7 @@ Feedback/Observation Section: Summarizes key trends (e.g., shift from classic bi
 
 ![Cyclistic Bike Share Analysis 2024 Q1](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Bike%20share%20Analysis%202024%20Q1.png)
 
-**1. Data Visualization:**
+**1. Graphs:**
    
 Line Charts:
 
@@ -384,3 +384,29 @@ Notes increased electric bike demand in April.
 **Cyclistic Bike Share Analysis 2024 Q2**
 
 ![Cyclistic Bike Share Analysis 2024 Q2](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Bike%20share%20Analysis%202024%20Q2.png)
+
+**1. Graphs:**
+   
+Line Charts:
+
+Displays bike usage trends for June and July.
+
+The data granularity appears finer, possibly on an hourly or daily basis.
+
+KPI Cards:
+
+Highlights the number of members for June and July.
+
+**2. Filters:**
+   
+Filters for specific months and user types allow targeted analysis.
+
+Focus remains on Casual and Membership categories.
+
+**3. Insight Generation:**
+   
+Feedback Section:
+
+Reiterates 2023 end-of-year patterns.
+
+Observes seasonal trends in membership and bike usage.
