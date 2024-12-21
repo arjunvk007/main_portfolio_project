@@ -273,6 +273,48 @@ This case study examines the differing usage patterns between casual riders and 
 
 ## Steps
 
- ### **Data Collection and Challenges**
+1. ### **Data Collection and Challenges**
 
- The data provided with the case study was distributed across multiple monthly files for 2023 and 2024, presenting a significant challenge. The data cleaning process was time-consuming, as it required careful review and processing of each individual file. Aggregating the data for analysis involved performing calculations separately for each file. To streamline usage and improve accessibility, all the data needed to be consolidated into a single comprehensive file, ensuring efficient analysis and easier access.
+The data provided with the case study was distributed across multiple monthly files for 2023 and 2024, presenting a significant challenge. The data cleaning process was time-consuming, as it required careful review and processing of each individual file. Aggregating the data for analysis involved performing calculations separately for each file. To streamline usage and improve accessibility, all the data needed to be consolidated into a single comprehensive file, ensuring efficient analysis and easier access.
+
+2. ### **Data Cleaning**
+
+- Changed Datatype: Converted date and time formats to a standard date format.
+
+- Removed Duplicates: Used the "Remove Duplicates" option to eliminate redundant entries.
+
+- Text Standardization: Applied the PROPER function for consistent letter casing and TRIM to remove unnecessary spaces.
+
+- Day Identification: Used the WEEKDAY function to determine the day of the week for each ride.
+
+- Filling Missing Data: Handled empty cells using “Find and Select” → “Go to Special” → “Blanks” and filled them with NA values.
+
+- Sorting and Filtering: Identified blank cells and data irregularities using sort and filter options.
+
+- Value Conversion: Converted text to numerical values using the VALUE function to resolve datatype errors.
+
+- Error Handling: Used IFERROR to replace errors (e.g., #VALUE) with NA.
+
+- Formatting: Improved readability by adjusting headings and adding gridlines.
+
+- Proper Naming: Followed consistent naming conventions for cleaned datasets.
+
+3. **Analyze**
+
+- Mean, median, and mode functions were applied to analyze ride durations and the days of the week.
+
+- The CountIF function was employed to determine the total number of casual riders and subscribed members.
+
+- Pivot tables were utilized to calculate the average ride duration for each membership group, analyze weekday distributions by membership type, and count the total rides for each day of the week. Bar graphs and pie charts were generated from the pivot table data to visually represent these metrics. These processes facilitated the identification of patterns, anomalies, and outliers, ensuring the dataset’s reliability for analytical purposes. Clean and well-structured data enabled accurate insights into trends, customer behaviors, and operational dynamics, enhancing data visualization and supporting predictive modeling. This systematic approach improved data quality, empowering strategic planning and enabling informed decision-making for optimized outcomes.
+
+Examples:
+
+![202308](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Analyze%20202308.png)
+
+![202309](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Analysis%20202309.png)
+
+![202310](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/202310.png)
+
+4. **Data Visualization**
+
+
