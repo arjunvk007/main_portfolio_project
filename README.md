@@ -317,4 +317,14 @@ Examples:
 
 4. **Data Visualization**
 
+**Cyclistic Bike Share Analysis 2023**
 
+![Cyclistic Bike Share Analysis 2023](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Bike%20share%20Analysis%202023.png)
+
+**Cyclistic Bike Share Analysis 2024 Q1**
+
+![Cyclistic Bike Share Analysis 2024 Q1](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Bike%20share%20Analysis%202024%20Q1.png)
+
+**Cyclistic Bike Share Analysis 2024 Q2**
+
+![Cyclistic Bike Share Analysis 2024 Q2](https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Bike%20share%20Analysis%202024%20Q2.png)
