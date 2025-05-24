@@ -433,39 +433,39 @@ This project focuses on analyzing retail investor behavior to uncover patterns i
 
 By identifying behavior-based investor segments, this project helps support financial analysis, personalized advisory services, and fintech product strategy.
 
-### 1. Project Structure & Tools
+### Project Structure & Tools
 Stage	Tools Used
 Data Cleaning & Analysis	Python (Pandas, NumPy, Seaborn), Excel
 Clustering & Dim. Reduction	K-Means Clustering, PCA
 Dashboard & Reporting	Power BI, Streamlit
 Visualization	Matplotlib, Seaborn, Power BI
 
-### 3.Key Steps & Process
-1. 📥 Data Collection
+Key Steps & Process:
+### 1. 📥 Data Collection
 Survey data collected on investor behavior across multiple variables including:
 
-Gender, Age
+- Gender, Age
 
-Investment avenues (FDs, Mutual Funds, Equity, etc.)
+- Investment avenues (FDs, Mutual Funds, Equity, etc.)
 
-Monitoring frequency
+- Monitoring frequency
 
-Return expectations
+- Return expectations
 
-Investment purpose and risk attitude [Sourced from Kaggle]
+- Investment purpose and risk attitude [Sourced from Kaggle]
 
-Dataset cleaned and formatted using Excel and Python.
+- Dataset cleaned and formatted using Excel and Python.
 
 ### 2. 🧹 Data Cleaning & Preparation
 Performed structured data wrangling and preparation:
 
-Standardised column names and formats
+- Standardised column names and formats
 
-Checked and handled missing/null values
+- Checked and handled missing/null values
 
-Mapped categorical variables for clustering compatibility
+- Mapped categorical variables for clustering compatibility
 
-Ensured clean input for model training by validating data types, filtering anomalies, and encoding responses where needed
+- Ensured clean input for model training by validating data types, filtering anomalies, and encoding responses where needed
 
 ### 3. Clustering & Segmentation
 Applied K-Means Clustering with PCA (Principal Component Analysis) for dimensionality reduction.
@@ -474,7 +474,7 @@ Identified Investor Segments:
 
 🧑‍💼 Cautious Young Investors
 
-Age ~23
+#### Age ~23
 
 Prefer safer instruments (FDs, Gold)
 
@@ -482,7 +482,7 @@ Moderate return expectations
 
 🚀 Aggressive Growth Seekers
 
-Age ~27
+#### Age ~27
 
 Focused on equity and high returns
 
@@ -490,7 +490,7 @@ Actively monitor investments
 
 🧓 Experienced Risk-Balancers
 
-Age ~32
+#### Age ~32
 
 Balanced exposure across bonds and equity
 
@@ -518,6 +518,9 @@ Bookmarks and page navigation for storytelling
 Custom charts and visuals for enhanced UX
 
 Design consistency for readability and user flow
+
+![Cyclistic Bike Share Analysis 2023]([https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Bike%20share%20Analysis%202023.png](https://github.com/arjunvk007/main_portfolio_project/blob/main/Project%204%3A%20Investment%20Behaiviour%20Analysis/PowerBI.png))
+
 
 ### 5. Streamlit App
 Developed a Streamlit web app that allows users to input their investment behaviour and get matched to a likely investor persona. This bridges the technical backend with an intuitive user experience for broader accessibility.
