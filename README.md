@@ -426,3 +426,115 @@ Key recommendations include:
 - **Increased Availability of Electric Bikes:** Scale up the availability and promotion of electric bikes, as their popularity continues to rise, particularly among casual users.
 
 By implementing these targeted strategies, Cyclistic can effectively bridge the gap between casual and annual riders, improve user retention, and drive profitability, positioning itself for sustainable business growth in the competitive bike-share industry.
+
+# Project 4: Investment Behavior Analysis & Persona Segmentation
+## Overview
+This project focuses on analyzing retail investor behavior to uncover patterns in investment preferences, risk appetite, and monitoring habits. Using clustering techniques and dimensionality reduction, the goal was to define investor personas and present insights through an interactive Power BI dashboard and a Streamlit web app.
+
+By identifying behavior-based investor segments, this project helps support financial analysis, personalized advisory services, and fintech product strategy.
+
+### 1. Project Structure & Tools
+Stage	Tools Used
+Data Cleaning & Analysis	Python (Pandas, NumPy, Seaborn), Excel
+Clustering & Dim. Reduction	K-Means Clustering, PCA
+Dashboard & Reporting	Power BI, Streamlit
+Visualization	Matplotlib, Seaborn, Power BI
+
+### 3.Key Steps & Process
+1. 📥 Data Collection
+Survey data collected on investor behavior across multiple variables including:
+
+Gender, Age
+
+Investment avenues (FDs, Mutual Funds, Equity, etc.)
+
+Monitoring frequency
+
+Return expectations
+
+Investment purpose and risk attitude [Sourced from Kaggle]
+
+Dataset cleaned and formatted using Excel and Python.
+
+### 2. 🧹 Data Cleaning & Preparation
+Performed structured data wrangling and preparation:
+
+Standardised column names and formats
+
+Checked and handled missing/null values
+
+Mapped categorical variables for clustering compatibility
+
+Ensured clean input for model training by validating data types, filtering anomalies, and encoding responses where needed
+
+### 3. Clustering & Segmentation
+Applied K-Means Clustering with PCA (Principal Component Analysis) for dimensionality reduction.
+
+Identified Investor Segments:
+
+🧑‍💼 Cautious Young Investors
+
+Age ~23
+
+Prefer safer instruments (FDs, Gold)
+
+Moderate return expectations
+
+🚀 Aggressive Growth Seekers
+
+Age ~27
+
+Focused on equity and high returns
+
+Actively monitor investments
+
+🧓 Experienced Risk-Balancers
+
+Age ~32
+
+Balanced exposure across bonds and equity
+
+Conservative with long-term focus
+
+### 4. Visualisation & Dashboard (Power BI)
+Created an interactive Power BI dashboard to highlight:
+
+📌 Investor Distribution by Persona
+
+📈 Return Expectations vs. Monitoring Frequency
+
+📊 Investment Preferences by Age and Persona
+
+🎯 Persona-specific recommendations for financial planning
+
+Power BI Features Used:
+
+Slicers for segment filtering
+
+Drill-throughs to explore individual personas
+
+Bookmarks and page navigation for storytelling
+
+Custom charts and visuals for enhanced UX
+
+Design consistency for readability and user flow
+
+### 5. Streamlit App
+Developed a Streamlit web app that allows users to input their investment behaviour and get matched to a likely investor persona. This bridges the technical backend with an intuitive user experience for broader accessibility.
+
+
+🧠 What I Learned
+Deepened my understanding of behavioural finance and customer segmentation
+
+- Strengthened skills in dashboard design, user-focused storytelling, and data visualisation
+
+- Combined business analysis thinking with technical skills to develop a practical and insightful tool
+
+-  Gained actionable understanding of financial analysis techniques that can drive data-backed decision-making in fintech platforms, investment firms, and financial institutions—enabling smarter advisory, personalized offerings, and strategic market insights.
+
+- Learned to translate complex clustering models into visual narratives that stakeholders can easily understand
+
+📌 Preview
+🖥️ Streamlit App: investorpersonapredictor.streamlit.app
+📊 Power BI Dashboard: Available on request
+📁 Cleaned Dataset & Code: [Upload in repo if needed]
