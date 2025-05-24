@@ -519,7 +519,7 @@ Custom charts and visuals for enhanced UX
 
 Design consistency for readability and user flow
 
-![Cyclistic Bike Share Analysis 2023]([https://github.com/arjunvk007/main_portfolio_project/blob/main/Portfolio%20Sql%20%20photos/Bike%20share%20Analysis%202023.png](https://github.com/arjunvk007/main_portfolio_project/blob/main/Project%204%3A%20Investment%20Behaiviour%20Analysis/PowerBI.png))
+![Investment Behaiviour Analysis](https://github.com/arjunvk007/main_portfolio_project/blob/main/Project%204%3A%20Investment%20Behaiviour%20Analysis/PowerBI.png)
 
 
 ### 5. Streamlit App
