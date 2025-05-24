@@ -540,6 +540,7 @@ Deepened my understanding of behavioural finance and customer segmentation
 - Learned to translate complex clustering models into visual narratives that stakeholders can easily understand
 
 📌 Preview
+
 🖥️ Streamlit App: [investorpersonapredictor.streamlit.app](https://investorpersonapredictor.streamlit.app/)
 
 📊 Power BI Dashboard: Available on request
