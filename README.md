@@ -525,6 +525,8 @@ Design consistency for readability and user flow
 ### 5. Streamlit App
 Developed a Streamlit web app that allows users to input their investment behaviour and get matched to a likely investor persona. This bridges the technical backend with an intuitive user experience for broader accessibility.
 
+![Streamlit App](https://github.com/arjunvk007/main_portfolio_project/blob/main/Project%204%3A%20Investment%20Behaiviour%20Analysis/Screenshot%202025-05-23%20233243.png)
+
 
 🧠 What I Learned
 Deepened my understanding of behavioural finance and customer segmentation
