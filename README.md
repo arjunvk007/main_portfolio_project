@@ -457,15 +457,26 @@ Survey data collected on investor behavior across multiple variables including:
 - Dataset cleaned and formatted using Excel and Python.
 
 ### 2. 🧹 Data Cleaning & Preparation
+
 Performed structured data wrangling and preparation:
 
-- Standardised column names and formats
+Standardized column names and formats
 
-- Checked and handled missing/null values
+Checked and handled missing/null values
 
-- Mapped categorical variables for clustering compatibility
+Mapped categorical variables for clustering compatibility
 
-- Ensured clean input for model training by validating data types, filtering anomalies, and encoding responses where needed
+Ensured clean input for model training by validating data types, filtering anomalies, and encoding responses where needed
+
+🧰 Utilized Python (Pandas, NumPy, Seaborn) and Excel to:
+
+Format and clean survey data
+
+Conduct exploratory data analysis (EDA)
+
+Identify missing value patterns and perform imputation
+
+Ensure consistency across survey responses and numerical precision.
 
 ### 3. Clustering & Segmentation
 Applied K-Means Clustering with PCA (Principal Component Analysis) for dimensionality reduction.
@@ -535,9 +546,23 @@ Deepened my understanding of behavioural finance and customer segmentation
 
 - Combined business analysis thinking with technical skills to develop a practical and insightful tool
 
+- Gained hands-on experience using Python (Pandas, Seaborn) and Excel for data cleaning, formatting, and exploratory data analysis (EDA)
+
+- Built an intuitive understanding of financial analysis, focusing on behaviour-based segmentation and investment profiling
+
 -  Gained actionable understanding of financial analysis techniques that can drive data-backed decision-making in fintech platforms, investment firms, and financial institutions—enabling smarter advisory, personalized offerings, and strategic market insights.
 
-- Learned to translate complex clustering models into visual narratives that stakeholders can easily understand
+- Learned to translate complex clustering models into visual narratives that stakeholders can easily understand using Power BI
+
+-  understanding of financial analysis concepts and how behavioral data can be transformed into actionable insights—skills directly applicable to fintech innovation, investment platforms, and financial institutions for:
+
+🔍 Risk profiling
+
+🧑‍💼 Personalized investment recommendations
+
+📊 Data-driven decision-making
+
+- Applying data science techniques
 
 📌 Preview
 
